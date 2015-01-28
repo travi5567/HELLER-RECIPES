@@ -154,18 +154,20 @@ button.btn.dark {
   #bottom-nav button.button {
     background: #363c3f;
     color: #ffffff;
-    margin-bottom: 0;
+    padding: 0;
+    margin: 0;
     width: 100%;
     border: none;
     display: inline;
     float: left;
-    font-size: 24;
-    padding: 20px 0; }
+    font-size: 24; }
     #bottom-nav button.button:hover {
       background: #3d4447; }
     #bottom-nav button.button a {
       width: 100%;
       display: block;
+      padding: 20px 0;
+      line-height: 100%;
       color: #ffffff; }
       #bottom-nav button.button a:hover {
         color: #ffffff; }
@@ -176,14 +178,14 @@ button.btn.dark {
   width: 70%;
   margin-left: 15%;
   overflow: hidden;
+  padding: 100px 0;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   border-radius: 15px;
-  background: #f38c4b;
   text-align: center;
-  color: #363c3f; }
+  color: #ffffff; }
   .sign-in-container a, .sign-up-container a {
     color: #363c3f;
     text-decoration: underline;
@@ -232,7 +234,7 @@ button.btn.dark {
     opacity: 0;
     filter: alpha(opacity=0); }
   .sign-in-container h1, .sign-up-container h1 {
-    color: #363c3f;
+    color: #ffffff;
     margin: 20px 0; }
   .sign-in-container form#sign-in-form, .sign-in-container form#sign-up-form, .sign-in-container form#create-account-form, .sign-up-container form#sign-in-form, .sign-up-container form#sign-up-form, .sign-up-container form#create-account-form {
     width: 60%;
@@ -241,6 +243,7 @@ button.btn.dark {
       margin: 5px; }
       .sign-in-container form#sign-in-form p label, .sign-in-container form#sign-up-form p label, .sign-in-container form#create-account-form p label, .sign-up-container form#sign-in-form p label, .sign-up-container form#sign-up-form p label, .sign-up-container form#create-account-form p label {
         display: inline;
+        color: #ffffff;
         float: left;
         width: 20%;
         cursor: arrow !important;
@@ -323,7 +326,8 @@ button.btn.dark {
   width: 70%;
   margin-left: 15%;
   overflow: hidden;
-  padding-top: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -360,132 +364,140 @@ button.btn.dark {
     color: #ffffff;
     text-align: left; }
 
-.add-recipe-container {
-  overflow: hidden; }
-  .add-recipe-container form {
-    /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
-       follow these rules. Every browser that supports :checked also supports :not(), so
-       it doesn’t make the test unnecessarily selective */ }
-    .add-recipe-container form fieldset {
-      margin: 0 0 5px 0;
-      padding: 5px 0 0 0;
-      clear: both;
-      border: none; }
-    .add-recipe-container form label {
-      color: black; }
-    .add-recipe-container form legend {
-      color: black;
-      background: none;
+.add-recipe-container #add-recipe-form {
+  margin: 50px 0;
+  padding: 50px 0; }
+  .add-recipe-container #add-recipe-form h1 {
+    color: #004d4d; }
+  .add-recipe-container #add-recipe-form label {
+    color: #004d4d;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    margin-bottom: 5px; }
+.add-recipe-container form {
+  /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+     follow these rules. Every browser that supports :checked also supports :not(), so
+     it doesn’t make the test unnecessarily selective */ }
+  .add-recipe-container form fieldset {
+    margin: 0 0 5px 0;
+    padding: 5px 0 0 0;
+    clear: both;
+    border: none; }
+  .add-recipe-container form label {
+    color: black; }
+  .add-recipe-container form legend {
+    color: black;
+    background: none;
+    margin: 0;
+    padding: 0; }
+  .add-recipe-container form input {
+    font-size: 14; }
+  .add-recipe-container form textarea {
+    min-height: 100px; }
+  .add-recipe-container form .genre p {
+    display: inline-block; }
+  .add-recipe-container form .genre input[type="checkbox"] {
+    margin: 5px 15px; }
+  .add-recipe-container form .recipe-photo .profile-image-holder {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    padding: 0;
+    margin-top: -20px;
+    background: white; }
+    .add-recipe-container form .recipe-photo .profile-image-holder i {
+      left: 14px;
+      bottom: -40px;
+      position: absolute;
+      font-size: 120;
       margin: 0;
       padding: 0; }
-    .add-recipe-container form input {
-      font-size: 14; }
-    .add-recipe-container form textarea {
-      min-height: 100px; }
-    .add-recipe-container form .genre p {
-      display: inline-block; }
-    .add-recipe-container form .genre input[type="checkbox"] {
-      margin: 5px 15px; }
-    .add-recipe-container form .recipe-photo .profile-image-holder {
-      position: relative;
-      width: 150px;
-      height: 100px;
-      padding: 0;
-      margin-top: -20px;
-      background: white; }
-      .add-recipe-container form .recipe-photo .profile-image-holder i {
-        left: 14px;
-        bottom: -40px;
-        position: absolute;
-        font-size: 120;
-        margin: 0;
-        padding: 0; }
-    .add-recipe-container form .recipe-photo .btn {
-      background: #f38c4b;
-      float: none;
-      color: #ffffff;
-      text-align: left;
-      border-style: solid;
-      border-width: 0px;
-      cursor: pointer;
-      font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-      font-weight: normal;
-      line-height: normal;
-      margin: 0 0 1.25rem;
-      position: relative;
-      text-decoration: none;
-      text-align: center;
-      -webkit-appearance: none;
-      -webkit-border-radius: 0;
-      display: inline-block;
-      padding-top: 1rem;
-      padding-right: 2rem;
-      padding-bottom: 1.0625rem;
-      padding-left: 2rem;
-      font-size: 1rem;
-      background-color: #ffa568;
-      border-color: #007095;
-      color: #fff;
-      transition: background-color 300ms ease-out; }
-    .add-recipe-container form .recipe-photo input.upload-image {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: 0;
-      padding: 0;
-      font-size: 20;
-      cursor: pointer;
-      opacity: 0;
-      filter: alpha(opacity=0); }
-    .add-recipe-container form .ingredient-set {
-      padding: 5px;
-      background: #003334;
-      overflow: hidden;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      -ms-border-radius: 5px;
-      -o-border-radius: 5px;
-      border-radius: 5px;
-      margin: 0 0 10px 0; }
-      .add-recipe-container form .ingredient-set input {
-        margin: 0; }
-    .add-recipe-container form .rating {
-      float: left; }
-    .add-recipe-container form .rating:not(:checked) > input {
-      position: absolute;
-      top: -9999px;
-      clip: rect(0, 0, 0, 0); }
-    .add-recipe-container form .rating:not(:checked) > label {
-      float: right;
-      width: 1.2em;
-      padding: 0 .1em;
-      overflow: hidden;
-      white-space: nowrap;
-      cursor: pointer;
-      font-size: 120%;
-      line-height: 1.5;
-      color: teal;
-      text-shadow: 0px 2px 3px black;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text; }
-    .add-recipe-container form .rating:not(:checked) > label:before {
-      content: '★ '; }
-    .add-recipe-container form .rating > input:checked ~ label {
-      color: #f38c4b; }
-    .add-recipe-container form .rating:not(:checked) > label:hover,
-    .add-recipe-container form .rating:not(:checked) > label:hover ~ label {
-      color: #f38c4b; }
-    .add-recipe-container form .rating > input:checked + label:hover,
-    .add-recipe-container form .rating > input:checked + label:hover ~ label,
-    .add-recipe-container form .rating > input:checked ~ label:hover,
-    .add-recipe-container form .rating > input:checked ~ label:hover ~ label,
-    .add-recipe-container form .rating > label:hover ~ input:checked ~ label {
-      color: #f38c4b; }
-    .add-recipe-container form .rating > label:active {
-      position: relative;
-      top: 2px;
-      left: 2px; }
+  .add-recipe-container form .recipe-photo .btn {
+    background: #f38c4b;
+    float: none;
+    color: #ffffff;
+    text-align: left;
+    border-style: solid;
+    border-width: 0px;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.25rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    display: inline-block;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1.0625rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    background-color: #ffa568;
+    border-color: #007095;
+    color: #fff;
+    transition: background-color 300ms ease-out; }
+  .add-recipe-container form .recipe-photo input.upload-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  .add-recipe-container form .ingredient-set {
+    padding: 5px;
+    background: #003334;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0 0 10px 0; }
+    .add-recipe-container form .ingredient-set input {
+      margin: 0; }
+  .add-recipe-container form .rating {
+    float: left; }
+  .add-recipe-container form .rating:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0); }
+  .add-recipe-container form .rating:not(:checked) > label {
+    float: right;
+    width: 1.2em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 120%;
+    line-height: 1.5;
+    color: teal;
+    text-shadow: 0px 2px 3px black;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text; }
+  .add-recipe-container form .rating:not(:checked) > label:before {
+    content: '★ '; }
+  .add-recipe-container form .rating > input:checked ~ label {
+    color: #f38c4b; }
+  .add-recipe-container form .rating:not(:checked) > label:hover,
+  .add-recipe-container form .rating:not(:checked) > label:hover ~ label {
+    color: #f38c4b; }
+  .add-recipe-container form .rating > input:checked + label:hover,
+  .add-recipe-container form .rating > input:checked + label:hover ~ label,
+  .add-recipe-container form .rating > input:checked ~ label:hover,
+  .add-recipe-container form .rating > input:checked ~ label:hover ~ label,
+  .add-recipe-container form .rating > label:hover ~ input:checked ~ label {
+    color: #f38c4b; }
+  .add-recipe-container form .rating > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px; }
 
 .recipes-container, .update-recipes-container {
   background: teal;
@@ -494,6 +506,8 @@ button.btn.dark {
   padding-bottom: 100px; }
   .recipes-container .recipes, .update-recipes-container .recipes {
     margin: 20px 0 100px 0; }
+  .recipes-container .form, .update-recipes-container .form {
+    margin-bottom: 100px; }
   .recipes-container .filter p, .update-recipes-container .filter p {
     font-weight: bold;
     color: #004d4d; }
@@ -577,7 +591,7 @@ button.btn.dark {
       background: #ffffff;
       border: 1px solid #d1d1d1;
       font: bold 14 Arial, Helvetica, Sans-serif;
-      color: #ffffff;
+      color: #363c3f;
       padding: 6px 15px 6px 35px;
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
@@ -694,6 +708,8 @@ button.btn.dark {
     .recipes-container .recipe .recipe-thumb img, .update-recipes-container .recipe .recipe-thumb img {
       float: right; }
 
+.update-recipes-container .recipes {
+  margin: 20px 0; }
 .update-recipes-container form#update-recipe-form legend, .update-recipes-container form#update-recipe-form label {
   margin: 0;
   padding: 0;
@@ -864,6 +880,13 @@ button.btn.dark {
     float: left; }
     #navigation-header .menu-toggle a {
       margin-top: 0 !important; }
+
+  .members-container {
+    width: 90%;
+    margin-left: 5%;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 100px; }
 
   .sign-in-container {
     width: 100%;

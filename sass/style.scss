@@ -142,19 +142,21 @@ button.btn.dark {
 	button.button {
 		background: $grey;
 		color: $white;
-		margin-bottom: 0;
+		padding: 0;
+		margin: 0;
 		width: 100%;
 		border: none;
 		display: inline;
 		float: left;
 		font-size: calcem(24);
-		padding: 20px 0;
 		&:hover {
 			background: lighten($grey, 3%);
 		}
 		a {
 			width: 100%;
 			display: block;
+			padding: 20px 0;
+			line-height: 100%;
 			color: $white;
 			&:hover {
 				color: $white;
@@ -171,10 +173,10 @@ button.btn.dark {
 	width: 70%;
 	margin-left: 15%;
 	overflow: hidden;
+	padding: 100px 0;
 	@include border-radius(15px); 
-	background: $orange;
 	text-align: center;
-	color: $grey;
+	color: $white;
 	a {
 		color: $grey;
 		text-decoration: underline;
@@ -226,7 +228,7 @@ button.btn.dark {
 		filter: alpha(opacity=0);
 	}
 	h1 {
-		color: $grey;
+		color: $white;
 		margin: 20px 0;
 	}
 	form#sign-in-form, form#sign-up-form, form#create-account-form {
@@ -237,6 +239,7 @@ button.btn.dark {
 			margin: 5px;
 			label {
 				display: inline;
+				color: $white;
 				float: left;
 				width: 20%;
 				cursor: arrow !important;
@@ -339,7 +342,8 @@ button.btn.dark {
 	width: 70%;
 	margin-left: 15%;
 	overflow: hidden;
-	padding-top: 150px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	@include border-radius(15px); 
 	text-align: center;
 	color: $grey;
@@ -381,7 +385,19 @@ button.btn.dark {
 
 //ADD RECIPE FROM PAGE
 .add-recipe-container {
-	overflow: hidden;
+	#add-recipe-form {
+		margin: 50px 0;
+		padding: 50px 0;
+		h1 {
+			color: $teal;
+		}
+		label {
+			color: $teal;
+			letter-spacing: 0.1em;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+	}
 	form {
 		fieldset {
 			margin: 0 0 5px 0;
@@ -541,6 +557,9 @@ button.btn.dark {
 	.recipes {
 		margin: 20px 0 100px 0;
 	}
+	.form {
+		margin-bottom: 100px;
+	}
 	.filter {
 		p {
 			font-weight: bold;
@@ -623,7 +642,7 @@ button.btn.dark {
 		    background: $white;
 		    border: 1px solid #d1d1d1;
 		    font: bold calcem(14) Arial,Helvetica,Sans-serif;
-		    color: $white;
+		    color: $grey;
 		    padding: 6px 15px 6px 35px;
 		    @include border-radius(10px);
 		    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
@@ -763,7 +782,9 @@ button.btn.dark {
 }
 
 .update-recipes-container {
-
+	.recipes {
+		margin: 20px 0;
+	}
 	form#update-recipe-form {
 		legend, label {
 			margin: 0;

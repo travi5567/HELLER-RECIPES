@@ -31,6 +31,6 @@
 
 		echo form_close();
 	?>
-	<a href="<?php echo base_url() . 'login/view_signin)'  ?>">Already a member? Click here to login!</a>
+	<a href="<?php echo base_url('login');  ?>">Already a member? Click here to login!</a>
 </div>
 

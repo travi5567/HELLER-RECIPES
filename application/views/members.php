@@ -1,4 +1,9 @@
 <div class="members-container">
+<div class="row">
+	<div class="small-12 column">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, Distinctio asperiores fugiat consequuntur.</p>
+	</div>
+</div>
 	<div class="row">
 		<div class="small-12 column">
 			<button class="btn"><a href="<?php echo site_url('addRecipe');?>">Add Recipe</a></button>
