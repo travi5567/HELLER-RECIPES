@@ -7,19 +7,19 @@
 			echo validation_errors();
 			echo "<p><label for='firstname'>First Name: </label>";
 				echo form_input('firstname', $this->input->post('firstname'));
-			echo "<p>";
+			echo "</p>";
 
 			echo "<p><label for='email'>Email: </label>";
 				echo form_input('email', $this->input->post('email'));
-			echo "<p>";
+			echo "</p>";
 
 			echo "<p><label for='password'>Password: </label>";
 				echo form_password('password');
-			echo "<p>";
+			echo "</p>";
 
 			echo "<p><label for='cpassword'>Confirm Password: </label>";
 				echo form_password('cpassword');
-			echo "<p>";
+			echo "</p>";
 
 			$data = array(
 			          'name'        => 'signup_submit',

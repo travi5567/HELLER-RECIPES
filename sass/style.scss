@@ -36,6 +36,10 @@ a {
 		color: color(bubblegum);
 	}
 }
+blockquote {
+	color: $white;
+	border: none;
+}
 h1 {
 	font-weight: bold;
 }
@@ -61,6 +65,13 @@ button.btn.dark {
 	background: $grey;
 	outline: none;
 	border: none;
+	a {
+		color: $white;
+		padding: 0;
+		margin: 0;
+		text-decoration: none;
+		width: 100%;
+	}
 	&:hover,&:focus{
 		background: darken($grey, 5%) !important;
 		outline: none;
@@ -94,27 +105,26 @@ button.btn.dark {
 		p {
 			color: $white !important;
 			text-align: left;
-			margin-top: 15px;
+			margin-top: 8px;
+			margin-bottom: 0;
+			padding: 0;
 		}
 	}
 	.menu-toggle {
 		float: right;
-		font-size: 35px;
 		span.username {
 			float: left;
 			color: $white;
-			font-size: 22px;
-			margin-top: 15px;
+			font-size: 0.8em;
 			margin-right: 15px;
 		}
 		a {
 			display: block;
 			float: left;
-			margin-top: 20px;
 			padding: 0;
 			text-decoration: none;
 			color: $lightTeal;
-			font-size: 14px;
+			font-size: 0.6em;
 		}
 	}
 }
@@ -128,11 +138,13 @@ button.btn.dark {
 	.columns {
 		padding: 0;
 		margin: 0;
+		border-right: 2px solid #3f464a;
+		border-left: 2px solid #2e3336;
 		&:first-child {
-			border-right: 2px solid #3f464a;
+			border-left: none;
 		}
 		&:last-child {
-			border-left: 2px solid #2e3336;
+			border-right: none;
 		}
 	}
 	.signin, .create-account {
@@ -148,7 +160,6 @@ button.btn.dark {
 		border: none;
 		display: inline;
 		float: left;
-		font-size: calcem(24);
 		&:hover {
 			background: lighten($grey, 3%);
 		}
@@ -158,9 +169,13 @@ button.btn.dark {
 			padding: 20px 0;
 			line-height: 100%;
 			color: $white;
+			font-size: 0.9em;
 			&:hover {
 				color: $white;
 			}
+		}
+		i {
+			margin-right: 10px;
 		}
 	}
 	.inactive-btn {
@@ -360,7 +375,10 @@ button.btn.dark {
 			width: 100%;
 			display: block;
 		}
-	}	
+	}
+	i {
+		margin-right: 10px;
+	}
 }
 
 //WELCOME SCREEN FOR LOGGED IN USERS
@@ -389,7 +407,7 @@ button.btn.dark {
 		margin: 50px 0;
 		padding: 50px 0;
 		h1 {
-			color: $teal;
+			color: $white;
 		}
 		label {
 			color: $teal;
@@ -552,7 +570,7 @@ button.btn.dark {
 .recipes-container, .update-recipes-container {
 	background: $lightTeal;
 	height: 100%;
-	padding-top: 100px;
+	padding-top: 80px;
 	padding-bottom: 100px;
 	.recipes {
 		margin: 20px 0 100px 0;
@@ -679,7 +697,7 @@ button.btn.dark {
 		padding: 10px;
 		@include border-radius(10px);
 		h1 {
-			font-size: 1em;
+			font-size: 0.8em;
 			text-transform: uppercase;
 			color: $white;
 		}

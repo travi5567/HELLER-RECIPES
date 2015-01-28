@@ -1,11 +1,6 @@
 <div class="recipes-container">
 	<div class="row">
 		<div class="small-12 medium-12 column">
-			<p>A list of some of the most amzing meals conjured up and enjoyed by the Heller's. Enjoy, and please give credit where credit is do.</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-12 medium-12 column">
 			<?php $attributes = array('id' => 'search-form');?>
 			<?=form_open('addRecipe/search', $attributes);?>
 				<div class="small-8 columns noSpace" ><?php $search = array('name'=>'search','id'=>'search','value'=>'');?><?=form_input($search);?></p></div>

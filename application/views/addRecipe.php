@@ -46,7 +46,7 @@
 					      'value'       => 'Update Recipe',
 					      'class'       => 'btn button'
 					    );?>
-					<button class="btn" type="submit" name="update_recipe">Update Recipe</button>
+					<button class="btn" type="submit" name="add_recipe">Add Recipe</button>
 			<?php echo form_close(); ?>
 		</div>
 	</div>

@@ -64,6 +64,10 @@ a {
   #container h1, #container p, #container h2 {
     color: #fd5ca8; }
 
+blockquote {
+  color: #ffffff;
+  border: none; }
+
 h1 {
   font-weight: bold; }
 
@@ -91,6 +95,12 @@ button.btn.dark {
   background: #363c3f;
   outline: none;
   border: none; }
+  .btn.button a {
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    width: 100%; }
   .btn.button:hover, .btn.button:focus {
     background: #2a2f31 !important;
     outline: none;
@@ -117,24 +127,23 @@ button.btn.dark {
     #navigation-header div.page-title p {
       color: #ffffff !important;
       text-align: left;
-      margin-top: 15px; }
+      margin-top: 8px;
+      margin-bottom: 0;
+      padding: 0; }
   #navigation-header .menu-toggle {
-    float: right;
-    font-size: 35px; }
+    float: right; }
     #navigation-header .menu-toggle span.username {
       float: left;
       color: #ffffff;
-      font-size: 22px;
-      margin-top: 15px;
+      font-size: 0.8em;
       margin-right: 15px; }
     #navigation-header .menu-toggle a {
       display: block;
       float: left;
-      margin-top: 20px;
       padding: 0;
       text-decoration: none;
       color: teal;
-      font-size: 14px; }
+      font-size: 0.6em; }
 
 #bottom-nav {
   position: fixed;
@@ -143,11 +152,13 @@ button.btn.dark {
   margin: 0; }
   #bottom-nav .columns {
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    border-right: 2px solid #3f464a;
+    border-left: 2px solid #2e3336; }
     #bottom-nav .columns:first-child {
-      border-right: 2px solid #3f464a; }
+      border-left: none; }
     #bottom-nav .columns:last-child {
-      border-left: 2px solid #2e3336; }
+      border-right: none; }
   #bottom-nav .signin, #bottom-nav .create-account {
     background: #363c3f;
     overflow: hidden; }
@@ -159,8 +170,7 @@ button.btn.dark {
     width: 100%;
     border: none;
     display: inline;
-    float: left;
-    font-size: 24; }
+    float: left; }
     #bottom-nav button.button:hover {
       background: #3d4447; }
     #bottom-nav button.button a {
@@ -168,9 +178,12 @@ button.btn.dark {
       display: block;
       padding: 20px 0;
       line-height: 100%;
-      color: #ffffff; }
+      color: #ffffff;
+      font-size: 0.9em; }
       #bottom-nav button.button a:hover {
         color: #ffffff; }
+    #bottom-nav button.button i {
+      margin-right: 10px; }
   #bottom-nav .inactive-btn {
     color: #2a2f31 !important; }
 
@@ -347,6 +360,8 @@ button.btn.dark {
       text-align: left;
       width: 100%;
       display: block; }
+  .members-container i {
+    margin-right: 10px; }
 
 .welcome-container {
   width: 70%;
@@ -368,7 +383,7 @@ button.btn.dark {
   margin: 50px 0;
   padding: 50px 0; }
   .add-recipe-container #add-recipe-form h1 {
-    color: #004d4d; }
+    color: #ffffff; }
   .add-recipe-container #add-recipe-form label {
     color: #004d4d;
     letter-spacing: 0.1em;
@@ -502,7 +517,7 @@ button.btn.dark {
 .recipes-container, .update-recipes-container {
   background: teal;
   height: 100%;
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 100px; }
   .recipes-container .recipes, .update-recipes-container .recipes {
     margin: 20px 0 100px 0; }
@@ -629,7 +644,7 @@ button.btn.dark {
     -o-border-radius: 10px;
     border-radius: 10px; }
     .recipes-container .recipe h1, .update-recipes-container .recipe h1 {
-      font-size: 1em;
+      font-size: 0.8em;
       text-transform: uppercase;
       color: #ffffff; }
     .recipes-container .recipe a, .update-recipes-container .recipe a {
@@ -845,83 +860,81 @@ button.btn.dark {
     font-family: 'digital';
     src: url("http://thecodeplayer.com/uploads/fonts/DS-DIGI.TTF"); } }
 @media only screen {
-  body, html {
-    background: green !important; } }
+  body #bottom-nav button.button a, html #bottom-nav button.button a {
+    font-size: 0.6em !important; }
+  body .logo, html .logo {
+    float: left;
+    padding-right: 10px; }
+    body .logo a h1, html .logo a h1 {
+      font-size: 1.5em;
+      color: #ffffff; }
+  body .menu-toggle, html .menu-toggle {
+    margin: 5px;
+    float: left !important; }
+    body .menu-toggle span, html .menu-toggle span {
+      float: none; }
+  body .sign-in-container, html .sign-in-container {
+    width: 90%;
+    margin-left: 5%; }
+    body .sign-in-container form#sign-in-form, html .sign-in-container form#sign-in-form {
+      width: 98% !important;
+      margin: 0 1% !important; }
+      body .sign-in-container form#sign-in-form p label, body .sign-in-container form#sign-in-form p input, html .sign-in-container form#sign-in-form p label, html .sign-in-container form#sign-in-form p input {
+        font-size: 1.3em !important;
+        float: none !important;
+        display: block !important; }
+      body .sign-in-container form#sign-in-form p label, html .sign-in-container form#sign-in-form p label {
+        color: #004d4d; }
+      body .sign-in-container form#sign-in-form p input, html .sign-in-container form#sign-in-form p input {
+        height: 2rem;
+        width: 100% !important; }
+      body .sign-in-container form#sign-in-form p input[type='submit'], html .sign-in-container form#sign-in-form p input[type='submit'] {
+        height: auto;
+        margin-top: 60px; }
+  body .sign-up-container, html .sign-up-container {
+    width: 90%;
+    margin-left: 5%; }
+    body .sign-up-container form#sign-up-form, html .sign-up-container form#sign-up-form {
+      width: 98% !important;
+      margin: 0 1% !important; }
+      body .sign-up-container form#sign-up-form p label, body .sign-up-container form#sign-up-form p input, html .sign-up-container form#sign-up-form p label, html .sign-up-container form#sign-up-form p input {
+        width: 100%;
+        font-size: 1.3em !important;
+        float: none !important;
+        display: block !important; }
+      body .sign-up-container form#sign-up-form p label, html .sign-up-container form#sign-up-form p label {
+        color: #004d4d; }
+      body .sign-up-container form#sign-up-form p input, html .sign-up-container form#sign-up-form p input {
+        height: 2rem;
+        margin: 5px 0 10px 0;
+        width: 100% !important; }
+      body .sign-up-container form#sign-up-form p input[type='submit'], html .sign-up-container form#sign-up-form p input[type='submit'] {
+        height: auto;
+        margin-top: 60px; } }
 /* Define mobile styles */
 @media only screen and (max-width: 40em) {
-  body, html {
-    background: red !important; }
-
   /* Portrait */ }
-@media only screen and (max-width: 40em) and (orientation: portrait) {
-  /* Portrait styles */
-  body, html {
-    background: teal !important; }
-
-  #bottom-nav .button {
-    font-size: 0.7em; }
-
-  #search-form input[type="text"] {
-    float: left;
-    width: 100%; }
-
-  #navigation-header .logo h1 {
-    font-size: 1.8em; }
-
-  #navigation-header .menu-toggle span.username {
-    margin-top: 0;
-    font-size: 14px !important; }
-
-  #navigation-header div.page-title p {
-    margin-top: 15px;
-    font-size: 0.8em; }
-
-  #navigation-header .menu-toggle {
-    float: left; }
-    #navigation-header .menu-toggle a {
-      margin-top: 0 !important; }
-
-  .members-container {
-    width: 90%;
-    margin-left: 5%;
-    overflow: hidden;
-    padding-top: 100px;
-    padding-bottom: 100px; }
-
-  .sign-in-container {
-    width: 100%;
-    margin: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0; }
-    .sign-in-container h1 {
-      font-size: 24; }
-
-  form#sign-in-form {
-    width: 98% !important;
-    margin: 0 1% !important; }
-    form#sign-in-form p label, form#sign-in-form p input {
-      font-size: 24 !important;
-      float: none !important;
-      display: block !important; }
-    form#sign-in-form p input {
-      height: 2rem;
-      width: 100% !important; }
-    form#sign-in-form p input[type='submit'] {
-      height: auto;
-      margin-top: 60px; } }
-@media only screen and (max-width: 40em) {
-  /* Landscape */ }
-@media only screen and (max-width: 40em) and (orientation: landscape) {
-  /* Landscape styles */
-  body, html {
-    background: purple !important; } }
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 @media only screen and (min-width: 40.063em) {
   body, html {
-    background: blue !important; } }
+    background: teal !important; }
+    body .logo, html .logo {
+      float: left;
+      padding-right: 10px; }
+      body .logo a h1, html .logo a h1 {
+        font-size: 2.5em !important;
+        color: #ffffff; }
+    body .menu-toggle, html .menu-toggle {
+      margin: 5px;
+      float: right !important; }
+      body .menu-toggle span, html .menu-toggle span {
+        float: none; }
+    body #bottom-nav button.button a, html #bottom-nav button.button a {
+      font-size: 1em !important; }
+    body #navigation-header .menu-toggle span, html #navigation-header .menu-toggle span {
+      font-size: 0.5em; }
+    body #navigation-header .menu-toggle span.username, html #navigation-header .menu-toggle span.username {
+      font-size: 0.5em; } }
 /* min-width 641px, medium screens */
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 64.063em) {

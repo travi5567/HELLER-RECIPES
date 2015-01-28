@@ -2,24 +2,16 @@
 	if($this->session->userdata('is_logged_in')){
 		echo '<div id="bottom-nav">
 			<div class="small-3 columns">
-				<div class="signin">
-					<button class="button"><a href="'.site_url('login/members') .'">Home</a></button>
-				</div>
+				<button class="button"><a href="'.site_url('login/members') .'"><i class="fi-home"></i>Home</a></button>
 			</div>
 			<div class="small-3 columns">
-				<div class="create-account">
-					<button class="button"><a href="'.site_url('addRecipe/stopwatch').'">Stop Watch</a></button>
-				</div>
+				<button class="button"><a href="'.site_url('addRecipe/stopwatch').'"><i class="fi-clock"></i>Stop Watch</a></button>
 			</div>
 			<div class="small-3 columns">
-				<div class="create-account">
-					<button class="button"><a href="'.site_url('addRecipe/recipes').'">Recipes</a></button>
-				</div>
+				<button class="button"><a href="'.site_url('addRecipe/recipes').'"><i class="fi-book"></i>Recipes</a></button>
 			</div>
 			<div class="small-3 columns">
-				<div class="create-account">
-					<button class="button"><a href="'.site_url('addRecipe').'">Add Recipes</a></button>
-				</div>
+				<button class="button"><a href="'.site_url('addRecipe').'"><i class="fi-plus"></i>Add Recipes</a></button>
 			</div>
 		</div><!-- END OF BOTTOM-NAV -->';
 	} else {
