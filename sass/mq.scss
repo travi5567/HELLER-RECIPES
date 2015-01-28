@@ -14,7 +14,7 @@
   @media screen and (orientation:portrait) {
   /* Portrait styles */
     body,html {
-      background: teal !important;
+      background: $lightTeal !important;
     }
     #bottom-nav {
       .button {
@@ -97,7 +97,7 @@
 // Large screens
 @media only screen and (min-width: 64.063em) {
   body,html {
-    background: teal !important;
+    background: $lightTeal !important;
   }
 } /* min-width 1025px, large screens */
 

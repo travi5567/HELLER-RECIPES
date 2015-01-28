@@ -9,7 +9,7 @@
 			<?php $attributes = array('id' => 'search-form');?>
 			<?=form_open('addRecipe/search', $attributes);?>
 				<div class="small-8 columns noSpace" ><?php $search = array('name'=>'search','id'=>'search','value'=>'');?><?=form_input($search);?></p></div>
-				<div class="small-4 columns " ><input type='submit' value='Search' class='btn-search' id="btn-search" /></div>
+				<div class="small-4 columns " ><button type='submit' class='btn-search' id="btn-search" ><i class="fi-magnifying-glass"></i>Search</button></div>
 			<?=form_close();?>
 		</div>
 	</div>
