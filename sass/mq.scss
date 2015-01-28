@@ -1,0 +1,111 @@
+// Small screens
+@media only screen {
+  body,html {
+    background: green !important;
+  }
+ 
+} /* Define mobile styles */
+
+@media only screen and (max-width: 40em) {
+  body,html {
+    background: red !important;
+  }
+  /* Portrait */
+  @media screen and (orientation:portrait) {
+  /* Portrait styles */
+    body,html {
+      background: teal !important;
+    }
+    #bottom-nav {
+      .button {
+        font-size: 0.7em;
+      }
+    }
+    #search-form {
+      input[type="text"]{
+        float: left;
+        width: 100%;
+      }
+    }
+    #navigation-header .logo h1 {
+      font-size: 1.8em;
+    }
+    #navigation-header .menu-toggle span.username {
+      margin-top: 0;
+      font-size: 14px !important;
+    }
+    #navigation-header div.page-title p {
+      margin-top: 15px;
+      font-size: 0.8em;
+    }
+    #navigation-header .menu-toggle {
+      float: left;
+      a {
+        margin-top: 0 !important;
+      }
+    }
+    .sign-in-container {
+      width: 100%;
+      margin: 0;
+      @include border-radius(0);
+      h1 {
+        font-size: calcem(24);
+      }
+    }
+    form#sign-in-form{
+      width: 98% !important;
+      margin: 0 1% !important;
+      p {
+        label, input {
+          font-size: calcem(24) !important;
+          float: none !important;
+          display: block !important;
+        }
+        input {
+          height: 2rem;
+          width: 100% !important;
+        }
+        input[type='submit']{
+          height: auto;
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+
+    /* Landscape */
+    @media screen and (orientation:landscape) {
+    /* Landscape styles */
+      body,html {
+        background: purple !important;
+      }
+
+  }
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+// Medium screens
+@media only screen and (min-width: 40.063em) {
+  body,html {
+    background: blue !important;
+  }
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+// Large screens
+@media only screen and (min-width: 64.063em) {
+  body,html {
+    background: teal !important;
+  }
+} /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+// XLarge screens
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+// XXLarge screens
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */

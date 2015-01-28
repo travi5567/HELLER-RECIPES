@@ -1,0 +1,1 @@
+$(function(){var i=$(".top-heading"),t=$(".bottom-info");t.hide(),i.on("click",function(){"block"===$(this).next("div").css("display")?$(this).next("div").fadeOut():$(this).next("div").fadeIn()})});

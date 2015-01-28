@@ -1,0 +1,7 @@
+//FUNCTIONS
+@function calcem($target, $context: $base__font-size) {
+    @return ($target / $context) * 1em;
+}
+@function pxtopercent($target, $parent: 16) {
+  @return percentage($target / $parent);
+}

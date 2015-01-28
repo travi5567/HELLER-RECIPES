@@ -1,0 +1,879 @@
+@charset "UTF-8";
+@-webkit-keyframes bgcolor {
+  0% {
+    background-color: #ffccf2; }
+  50% {
+    background-color: #ccffcc; }
+  100% {
+    background-color: #ccffff; } }
+@-moz-keyframes bgcolor {
+  0% {
+    background-color: #ffccf2; }
+  50% {
+    background-color: #ccffcc; }
+  100% {
+    background-color: #ccffff; } }
+@-ms-keyframes bgcolor {
+  0% {
+    background-color: #ffccf2; }
+  50% {
+    background-color: #ccffcc; }
+  100% {
+    background-color: #ccffff; } }
+@keyframes bgcolor {
+  0% {
+    background-color: #ffccf2; }
+  50% {
+    background-color: #ccffcc; }
+  100% {
+    background-color: #ccffff; } }
+html {
+  min-height: 100%; }
+
+body, html {
+  min-height: 100%;
+  background: teal;
+  margin: 0;
+  padding: 50px 0 50px 0; }
+
+.hide {
+  display: none !important; }
+
+a {
+  font-weight: bold;
+  color: #f38c4b; }
+
+.noPadding {
+  padding: 0 !important; }
+
+.noMargin {
+  margin: 0 !important; }
+
+.noSpace {
+  padding: 0 !important;
+  margin: 0 !important; }
+
+.center-text {
+  text-align: center !important; }
+
+#container {
+  width: 70%;
+  margin-left: 15%;
+  background: #111;
+  padding: 20px; }
+  #container h1, #container p, #container h2 {
+    color: #fd5ca8; }
+
+h1 {
+  font-weight: bold; }
+
+button.btn.dark {
+  background: #363c3f !important;
+  display: block;
+  float: none;
+  width: 100%;
+  color: #f38c4b;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
+  button.btn.dark a {
+    color: #ffffff;
+    text-align: left; }
+
+.btn.button {
+  background: #363c3f;
+  outline: none;
+  border: none; }
+  .btn.button:hover, .btn.button:focus {
+    background: #2a2f31 !important;
+    outline: none;
+    border: none; }
+
+#navigation-header {
+  background: #363c3f;
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  margin: 0;
+  top: 0; }
+  #navigation-header .removePadding {
+    padding: 0 5px; }
+  #navigation-header .logo {
+    float: left;
+    padding-right: 10px; }
+    #navigation-header .logo h1 {
+      color: #f38c4b; }
+      #navigation-header .logo h1 span {
+        color: teal; }
+  #navigation-header div.page-title {
+    float: left; }
+    #navigation-header div.page-title p {
+      color: #ffffff !important;
+      text-align: left;
+      margin-top: 15px; }
+  #navigation-header .menu-toggle {
+    float: right;
+    font-size: 35px; }
+    #navigation-header .menu-toggle span.username {
+      float: left;
+      color: #ffffff;
+      font-size: 22px;
+      margin-top: 15px;
+      margin-right: 15px; }
+    #navigation-header .menu-toggle a {
+      display: block;
+      float: left;
+      margin-top: 20px;
+      padding: 0;
+      text-decoration: none;
+      color: teal;
+      font-size: 14px; }
+
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0; }
+  #bottom-nav .columns {
+    padding: 0;
+    margin: 0; }
+    #bottom-nav .columns:first-child {
+      border-right: 2px solid #3f464a; }
+    #bottom-nav .columns:last-child {
+      border-left: 2px solid #2e3336; }
+  #bottom-nav .signin, #bottom-nav .create-account {
+    background: #363c3f;
+    overflow: hidden; }
+  #bottom-nav button.button {
+    background: #363c3f;
+    color: #ffffff;
+    margin-bottom: 0;
+    width: 100%;
+    border: none;
+    display: inline;
+    float: left;
+    font-size: 24;
+    padding: 20px 0; }
+    #bottom-nav button.button:hover {
+      background: #3d4447; }
+    #bottom-nav button.button a {
+      width: 100%;
+      display: block; }
+      #bottom-nav button.button a:hover {
+        color: #ffffff; }
+  #bottom-nav .inactive-btn {
+    color: #2a2f31 !important; }
+
+.sign-in-container, .sign-up-container {
+  width: 70%;
+  margin-left: 15%;
+  overflow: hidden;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  background: #f38c4b;
+  text-align: center;
+  color: #363c3f; }
+  .sign-in-container a, .sign-up-container a {
+    color: #363c3f;
+    text-decoration: underline;
+    display: block;
+    width: 60%;
+    clear: both;
+    margin: 20px 0 20px 20%;
+    font-size: 22;
+    text-align: center;
+    padding: 10px; }
+  .sign-in-container .btn.small, .sign-up-container .btn.small {
+    background: #f38c4b;
+    float: left;
+    color: #ffffff;
+    text-align: left;
+    border-style: solid;
+    border-width: 0px;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    margin: 10px 0 1.25rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 1.0625rem;
+    padding-left: 1rem;
+    font-size: 14;
+    background-color: #ffa568;
+    border-color: #007095;
+    color: #fff;
+    transition: background-color 300ms ease-out; }
+  .sign-in-container input.upload-image, .sign-up-container input.upload-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  .sign-in-container h1, .sign-up-container h1 {
+    color: #363c3f;
+    margin: 20px 0; }
+  .sign-in-container form#sign-in-form, .sign-in-container form#sign-up-form, .sign-in-container form#create-account-form, .sign-up-container form#sign-in-form, .sign-up-container form#sign-up-form, .sign-up-container form#create-account-form {
+    width: 60%;
+    margin-left: 20%; }
+    .sign-in-container form#sign-in-form p, .sign-in-container form#sign-up-form p, .sign-in-container form#create-account-form p, .sign-up-container form#sign-in-form p, .sign-up-container form#sign-up-form p, .sign-up-container form#create-account-form p {
+      margin: 5px; }
+      .sign-in-container form#sign-in-form p label, .sign-in-container form#sign-up-form p label, .sign-in-container form#create-account-form p label, .sign-up-container form#sign-in-form p label, .sign-up-container form#sign-up-form p label, .sign-up-container form#create-account-form p label {
+        display: inline;
+        float: left;
+        width: 20%;
+        cursor: arrow !important;
+        margin-top: 25px;
+        text-align: left;
+        font-weight: bold; }
+      .sign-in-container form#sign-in-form p input, .sign-in-container form#sign-up-form p input, .sign-in-container form#create-account-form p input, .sign-up-container form#sign-in-form p input, .sign-up-container form#sign-up-form p input, .sign-up-container form#create-account-form p input {
+        display: inline;
+        width: 80%;
+        float: left;
+        margin: 20px 0;
+        font-size: 18; }
+    .sign-in-container form#sign-in-form p.submit, .sign-in-container form#sign-up-form p.submit, .sign-in-container form#create-account-form p.submit, .sign-up-container form#sign-in-form p.submit, .sign-up-container form#sign-up-form p.submit, .sign-up-container form#create-account-form p.submit {
+      clear: both; }
+      .sign-in-container form#sign-in-form p.submit input, .sign-in-container form#sign-up-form p.submit input, .sign-in-container form#create-account-form p.submit input, .sign-up-container form#sign-in-form p.submit input, .sign-up-container form#sign-up-form p.submit input, .sign-up-container form#create-account-form p.submit input {
+        width: 100%; }
+    .sign-in-container form#sign-in-form button.submit, .sign-in-container form#sign-up-form button.submit, .sign-in-container form#create-account-form button.submit, .sign-up-container form#sign-in-form button.submit, .sign-up-container form#sign-up-form button.submit, .sign-up-container form#create-account-form button.submit {
+      display: block;
+      width: 100%;
+      font-size: 24;
+      background: #ffa568; }
+    .sign-in-container form#sign-in-form button.forgot-info, .sign-in-container form#sign-up-form button.forgot-info, .sign-in-container form#create-account-form button.forgot-info, .sign-up-container form#sign-in-form button.forgot-info, .sign-up-container form#sign-up-form button.forgot-info, .sign-up-container form#create-account-form button.forgot-info {
+      display: block;
+      width: 100%;
+      font-size: 14;
+      margin-top: 30px;
+      color: #363c3f;
+      background: #ffa568; }
+    .sign-in-container form#sign-in-form .checkbox-wrapper, .sign-in-container form#sign-up-form .checkbox-wrapper, .sign-in-container form#create-account-form .checkbox-wrapper, .sign-up-container form#sign-in-form .checkbox-wrapper, .sign-up-container form#sign-up-form .checkbox-wrapper, .sign-up-container form#create-account-form .checkbox-wrapper {
+      text-align: left;
+      overflow: hidden;
+      margin: 20px 0; }
+      .sign-in-container form#sign-in-form .checkbox-wrapper .email-notifications, .sign-in-container form#sign-up-form .checkbox-wrapper .email-notifications, .sign-in-container form#create-account-form .checkbox-wrapper .email-notifications, .sign-up-container form#sign-in-form .checkbox-wrapper .email-notifications, .sign-up-container form#sign-up-form .checkbox-wrapper .email-notifications, .sign-up-container form#create-account-form .checkbox-wrapper .email-notifications {
+        margin: 0;
+        padding: 0;
+        float: left; }
+      .sign-in-container form#sign-in-form .checkbox-wrapper p, .sign-in-container form#sign-up-form .checkbox-wrapper p, .sign-in-container form#create-account-form .checkbox-wrapper p, .sign-up-container form#sign-in-form .checkbox-wrapper p, .sign-up-container form#sign-up-form .checkbox-wrapper p, .sign-up-container form#create-account-form .checkbox-wrapper p {
+        margin: 0 10px 0;
+        padding: 0 0 0 10px;
+        line-height: 1rem; }
+  .sign-in-container .profile-image-holder, .sign-up-container .profile-image-holder {
+    position: relative;
+    width: 150px;
+    height: 170px;
+    padding: 0;
+    margin-top: 20px;
+    background: white; }
+    .sign-in-container .profile-image-holder i, .sign-up-container .profile-image-holder i {
+      bottom: -60px;
+      left: 14px;
+      position: absolute;
+      font-size: 190;
+      margin: 0;
+      padding: 0; }
+
+.view_users-container {
+  width: 70%;
+  margin-left: 15%;
+  overflow: hidden;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  text-align: center;
+  color: #363c3f; }
+  .view_users-container ul li {
+    text-align: left; }
+  .view_users-container button.btn {
+    background: #f38c4b;
+    display: block;
+    cursor: default;
+    float: none;
+    width: 100%; }
+    .view_users-container button.btn a {
+      color: #ffffff;
+      text-align: left; }
+
+.members-container {
+  width: 70%;
+  margin-left: 15%;
+  overflow: hidden;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 25px;
+  color: #363c3f; }
+  .members-container button.btn {
+    background: #f38c4b;
+    display: block;
+    float: none;
+    padding: 0;
+    width: 100%; }
+    .members-container button.btn a {
+      color: #ffffff;
+      padding: 10px 15px;
+      text-align: left;
+      width: 100%;
+      display: block; }
+
+.welcome-container {
+  width: 70%;
+  margin-left: 15%;
+  overflow: hidden;
+  color: #363c3f; }
+  .welcome-container h1 {
+    color: #363c3f;
+    margin: 20px 0; }
+  .welcome-container button.btn {
+    background: #f38c4b;
+    display: block;
+    float: none;
+    width: 100%;
+    color: #ffffff;
+    text-align: left; }
+
+.add-recipe-container {
+  overflow: hidden; }
+  .add-recipe-container form {
+    /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+       follow these rules. Every browser that supports :checked also supports :not(), so
+       it doesn’t make the test unnecessarily selective */ }
+    .add-recipe-container form fieldset {
+      margin: 0 0 5px 0;
+      padding: 5px 0 0 0;
+      clear: both;
+      border: none; }
+    .add-recipe-container form label {
+      color: black; }
+    .add-recipe-container form legend {
+      color: black;
+      background: none;
+      margin: 0;
+      padding: 0; }
+    .add-recipe-container form input {
+      font-size: 14; }
+    .add-recipe-container form textarea {
+      min-height: 100px; }
+    .add-recipe-container form .genre p {
+      display: inline-block; }
+    .add-recipe-container form .genre input[type="checkbox"] {
+      margin: 5px 15px; }
+    .add-recipe-container form .recipe-photo .profile-image-holder {
+      position: relative;
+      width: 150px;
+      height: 100px;
+      padding: 0;
+      margin-top: -20px;
+      background: white; }
+      .add-recipe-container form .recipe-photo .profile-image-holder i {
+        left: 14px;
+        bottom: -40px;
+        position: absolute;
+        font-size: 120;
+        margin: 0;
+        padding: 0; }
+    .add-recipe-container form .recipe-photo .btn {
+      background: #f38c4b;
+      float: none;
+      color: #ffffff;
+      text-align: left;
+      border-style: solid;
+      border-width: 0px;
+      cursor: pointer;
+      font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+      font-weight: normal;
+      line-height: normal;
+      margin: 0 0 1.25rem;
+      position: relative;
+      text-decoration: none;
+      text-align: center;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
+      display: inline-block;
+      padding-top: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 1.0625rem;
+      padding-left: 2rem;
+      font-size: 1rem;
+      background-color: #ffa568;
+      border-color: #007095;
+      color: #fff;
+      transition: background-color 300ms ease-out; }
+    .add-recipe-container form .recipe-photo input.upload-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 20;
+      cursor: pointer;
+      opacity: 0;
+      filter: alpha(opacity=0); }
+    .add-recipe-container form .ingredient-set {
+      padding: 5px;
+      background: #003334;
+      overflow: hidden;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+      margin: 0 0 10px 0; }
+      .add-recipe-container form .ingredient-set input {
+        margin: 0; }
+    .add-recipe-container form .rating {
+      float: left; }
+    .add-recipe-container form .rating:not(:checked) > input {
+      position: absolute;
+      top: -9999px;
+      clip: rect(0, 0, 0, 0); }
+    .add-recipe-container form .rating:not(:checked) > label {
+      float: right;
+      width: 1.2em;
+      padding: 0 .1em;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+      font-size: 120%;
+      line-height: 1.5;
+      color: teal;
+      text-shadow: 0px 2px 3px black;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text; }
+    .add-recipe-container form .rating:not(:checked) > label:before {
+      content: '★ '; }
+    .add-recipe-container form .rating > input:checked ~ label {
+      color: #f38c4b; }
+    .add-recipe-container form .rating:not(:checked) > label:hover,
+    .add-recipe-container form .rating:not(:checked) > label:hover ~ label {
+      color: #f38c4b; }
+    .add-recipe-container form .rating > input:checked + label:hover,
+    .add-recipe-container form .rating > input:checked + label:hover ~ label,
+    .add-recipe-container form .rating > input:checked ~ label:hover,
+    .add-recipe-container form .rating > input:checked ~ label:hover ~ label,
+    .add-recipe-container form .rating > label:hover ~ input:checked ~ label {
+      color: #f38c4b; }
+    .add-recipe-container form .rating > label:active {
+      position: relative;
+      top: 2px;
+      left: 2px; }
+
+.recipes-container .recipes, .update-recipes-container .recipes {
+  margin-top: 20px; }
+.recipes-container .filter p, .update-recipes-container .filter p {
+  font-weight: bold;
+  color: #363c3f; }
+  .recipes-container .filter p span, .update-recipes-container .filter p span {
+    background: #ffa568;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #ffffff; }
+.recipes-container .back-btn, .update-recipes-container .back-btn {
+  background: #363c3f;
+  width: 96%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 1em;
+  text-align: left;
+  padding: 10px;
+  margin-left: 10px; }
+  .recipes-container .back-btn:hover, .update-recipes-container .back-btn:hover {
+    background: #3b4144; }
+  .recipes-container .back-btn a, .update-recipes-container .back-btn a {
+    color: #ffffff;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    line-height: 100%; }
+    .recipes-container .back-btn a i, .update-recipes-container .back-btn a i {
+      margin-top: 0;
+      margin-right: 10px;
+      font-size: 1em; }
+.recipes-container i, .update-recipes-container i {
+  margin-right: 15px; }
+.recipes-container #search-form, .update-recipes-container #search-form {
+  margin: 0; }
+  .recipes-container #search-form #search, .update-recipes-container #search-form #search {
+    display: block;
+    width: 100% !important;
+    margin: 0 !important;
+    border: none; }
+  .recipes-container #search-form #btn-search, .update-recipes-container #search-form #btn-search {
+    width: 100% !important;
+    background: #363c3f;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 0;
+    font-size: 1em;
+    margin-right: 5px; }
+    .recipes-container #search-form #btn-search:hover, .recipes-container #search-form #btn-search:focus, .update-recipes-container #search-form #btn-search:hover, .update-recipes-container #search-form #btn-search:focus {
+      background: #3b4144; }
+  .recipes-container #search-form label, .update-recipes-container #search-form label {
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding-top: 5px; }
+  .recipes-container #search-form ::-webkit-input-placeholder, .update-recipes-container #search-form ::-webkit-input-placeholder {
+    color: #ffffff; }
+  .recipes-container #search-form :-moz-placeholder, .update-recipes-container #search-form :-moz-placeholder {
+    /* Firefox 18- */
+    color: #ffffff; }
+  .recipes-container #search-form ::-moz-placeholder, .update-recipes-container #search-form ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ffffff; }
+  .recipes-container #search-form :-ms-input-placeholder, .update-recipes-container #search-form :-ms-input-placeholder {
+    color: #ffffff; }
+  .recipes-container #search-form p, .update-recipes-container #search-form p {
+    float: left; }
+  .recipes-container #search-form p.search, .update-recipes-container #search-form p.search {
+    float: left; }
+  .recipes-container #search-form input[name="search"], .update-recipes-container #search-form input[name="search"] {
+    float: right;
+    display: block;
+    background: #ffa568;
+    border: 1px solid #d1d1d1;
+    font: bold 14 Arial, Helvetica, Sans-serif;
+    color: #ffffff;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s; }
+  .recipes-container #search-form input[type="text"]:focus, .update-recipes-container #search-form input[type="text"]:focus {
+    width: 200px; }
+.recipes-container h1, .update-recipes-container h1 {
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0; }
+.recipes-container .heading, .update-recipes-container .heading {
+  margin-top: 20px;
+  padding: 0 10px; }
+.recipes-container .recipe:first-child, .update-recipes-container .recipe:first-child {
+  margin-top: 0; }
+.recipes-container .recipe, .update-recipes-container .recipe {
+  background: #f38c4b;
+  overflow: hidden;
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
+  .recipes-container .recipe h1, .update-recipes-container .recipe h1 {
+    font-size: 1em;
+    text-transform: uppercase; }
+  .recipes-container .recipe a, .update-recipes-container .recipe a {
+    color: #363c3f;
+    float: right;
+    padding-top: 5px;
+    padding-right: 10px; }
+    .recipes-container .recipe a:hover i, .recipes-container .recipe a:hover, .update-recipes-container .recipe a:hover i, .update-recipes-container .recipe a:hover {
+      color: #ffa568; }
+  .recipes-container .recipe i, .update-recipes-container .recipe i {
+    color: #363c3f; }
+    .recipes-container .recipe i:hover, .update-recipes-container .recipe i:hover {
+      color: #ffa568; }
+  .recipes-container .recipe .top-heading, .update-recipes-container .recipe .top-heading {
+    padding-bottom: 15px; }
+  .recipes-container .recipe .recipe-info p, .update-recipes-container .recipe .recipe-info p {
+    color: #363c3f; }
+  .recipes-container .recipe .recipe-info p.name, .update-recipes-container .recipe .recipe-info p.name {
+    font-weight: bold; }
+  .recipes-container .recipe .recipe-info button.btn, .update-recipes-container .recipe .recipe-info button.btn {
+    background: #363c3f;
+    outline: none;
+    border: none; }
+    .recipes-container .recipe .recipe-info button.btn:hover, .recipes-container .recipe .recipe-info button.btn:focus, .update-recipes-container .recipe .recipe-info button.btn:hover, .update-recipes-container .recipe .recipe-info button.btn:focus {
+      background: #2a2f31;
+      outline: none;
+      border: none; }
+  .recipes-container .recipe .recipe-info .show, .update-recipes-container .recipe .recipe-info .show {
+    display: block !important; }
+  .recipes-container .recipe .recipe-info i, .update-recipes-container .recipe .recipe-info i {
+    margin-left: 15px;
+    color: #ffffff; }
+  .recipes-container .recipe .recipe-info .directions, .update-recipes-container .recipe .recipe-info .directions {
+    display: none;
+    height: auto;
+    padding: 10px;
+    background: #ffa568;
+    width: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px; }
+  .recipes-container .recipe .header-info, .update-recipes-container .recipe .header-info {
+    float: right; }
+    .recipes-container .recipe .header-info p.block, .update-recipes-container .recipe .header-info p.block {
+      background: #ffa568;
+      padding: 3px 10px;
+      font-size: 0.7em;
+      display: inline-block; }
+      .recipes-container .recipe .header-info p.block i, .update-recipes-container .recipe .header-info p.block i {
+        margin-right: 10px;
+        font-weight: bold; }
+  .recipes-container .recipe .recipe-thumb img, .update-recipes-container .recipe .recipe-thumb img {
+    float: right; }
+
+.update-recipes-container form#update-recipe-form legend, .update-recipes-container form#update-recipe-form label {
+  margin: 0;
+  padding: 0;
+  background: none !important;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.1em; }
+.update-recipes-container form#update-recipe-form input, .update-recipes-container form#update-recipe-form textarea, .update-recipes-container form#update-recipe-form select {
+  padding: 5px 0 0 5px;
+  margin: 10px 0 15px 0; }
+
+.member-nav {
+  margin: 40px 0; }
+
+.stopwatch-container {
+  width: 90%;
+  margin-left: 5%;
+  overflow: hidden;
+  padding: 10px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  background: #f38c4b;
+  color: #363c3f;
+  /*Styles for the controls*/
+  /*Control code*/
+  /*Now we need to sync the animation speed with time speed*/
+  /*One second per digit. 10 digits. Hence 10s*/
+  /*60 times .second*/
+  /*1/10th of .second*/
+  /*60 times .second*/
+  /*60 times .minute*/
+  /*60 times .minute*/
+  /*10 times .hour*/
+  /*The stopwatch looks good now. Lets add some styles*/
+  /*Lets animate the digit now - the main part of this tutorial*/
+  /*We are using prefixfree, so no need of vendor prefixes*/
+  /*The logic of the animation is to alter the 'top' value of the absolutely
+  positioned .numbers*/
+  /*Minutes and Seconds should be limited to only '60' and not '100'
+  Hence we need to create 2 animations. One with 10 steps and 10 digits and
+  the other one with 6 steps and 6 digits*/
+  /*Lets use a better font for the numbers*/ }
+  .stopwatch-container .timer {
+    overflow: hidden;
+    display: inline-block;
+    position: relative; }
+  .stopwatch-container .cell {
+    /*Should only display 1 digit. Hence height = line height of .numbers
+    and width = width of .numbers*/
+    width: 2em;
+    height: 40px;
+    font-size: 0.8em;
+    overflow: hidden;
+    position: relative;
+    float: left; }
+  .stopwatch-container .numbers {
+    width: 0.6em;
+    line-height: 40px;
+    font-family: digital, arial, verdana;
+    text-align: center;
+    color: #fff;
+    font-size: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*Glow to the text*/ }
+  .stopwatch-container #timer_controls label {
+    cursor: pointer;
+    float: left;
+    margin: 10px;
+    padding: 5px 10px;
+    background: #ffa568;
+    font-family: arial, verdana, tahoma;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 0 0 3px 3px; }
+  .stopwatch-container input[name="controls"] {
+    display: none; }
+  .stopwatch-container #stop:checked ~ .timer .numbers {
+    animation-play-state: paused; }
+  .stopwatch-container #start:checked ~ .timer .numbers {
+    animation-play-state: running; }
+  .stopwatch-container #reset:checked ~ .timer .numbers {
+    animation: none; }
+  .stopwatch-container .moveten {
+    /*The digits move but dont look good. We will use steps now
+    10 digits = 10 steps. You can now see the digits swapping instead of 
+    moving pixel-by-pixel*/
+    animation: moveten 1s steps(10, end) infinite;
+    /*By default animation should be paused*/
+    animation-play-state: paused; }
+  .stopwatch-container .movesix {
+    animation: movesix 1s steps(6, end) infinite;
+    animation-play-state: paused; }
+  .stopwatch-container .second {
+    animation-duration: 10s; }
+  .stopwatch-container .tensecond {
+    animation-duration: 60s; }
+  .stopwatch-container .milisecond {
+    animation-duration: 1s; }
+  .stopwatch-container .tenmilisecond {
+    animation-duration: 0.1s; }
+  .stopwatch-container .hundredmilisecond {
+    animation-duration: 0.01s; }
+  .stopwatch-container .minute {
+    animation-duration: 600s; }
+  .stopwatch-container .tenminute {
+    animation-duration: 3600s; }
+  .stopwatch-container .hour {
+    animation-duration: 36000s; }
+  .stopwatch-container .tenhour {
+    animation-duration: 360000s; }
+@keyframes moveten {
+  0% {
+    top: 0; }
+  100% {
+    top: -400px; }
+  /*height = 40. digits = 10. hence -400 to move it completely to the top*/ }
+@keyframes movesix {
+  0% {
+    top: 0; }
+  100% {
+    top: -240px; }
+  /*height = 40. digits = 6. hence -240 to move it completely to the top*/ }
+@font-face {
+  .stopwatch-container {
+    font-family: 'digital';
+    src: url("http://thecodeplayer.com/uploads/fonts/DS-DIGI.TTF"); } }
+@media only screen {
+  body, html {
+    background: green !important; } }
+/* Define mobile styles */
+@media only screen and (max-width: 40em) {
+  body, html {
+    background: red !important; }
+
+  /* Portrait */ }
+@media only screen and (max-width: 40em) and (orientation: portrait) {
+  /* Portrait styles */
+  body, html {
+    background: teal !important; }
+
+  #bottom-nav .button {
+    font-size: 0.7em; }
+
+  #search-form input[type="text"] {
+    float: left;
+    width: 100%; }
+
+  #navigation-header .logo h1 {
+    font-size: 1.8em; }
+
+  #navigation-header .menu-toggle span.username {
+    margin-top: 0;
+    font-size: 14px !important; }
+
+  #navigation-header div.page-title p {
+    margin-top: 15px;
+    font-size: 0.8em; }
+
+  #navigation-header .menu-toggle {
+    float: left; }
+    #navigation-header .menu-toggle a {
+      margin-top: 0 !important; }
+
+  .sign-in-container {
+    width: 100%;
+    margin: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0; }
+    .sign-in-container h1 {
+      font-size: 24; }
+
+  form#sign-in-form {
+    width: 98% !important;
+    margin: 0 1% !important; }
+    form#sign-in-form p label, form#sign-in-form p input {
+      font-size: 24 !important;
+      float: none !important;
+      display: block !important; }
+    form#sign-in-form p input {
+      height: 2rem;
+      width: 100% !important; }
+    form#sign-in-form p input[type='submit'] {
+      height: auto;
+      margin-top: 60px; } }
+@media only screen and (max-width: 40em) {
+  /* Landscape */ }
+@media only screen and (max-width: 40em) and (orientation: landscape) {
+  /* Landscape styles */
+  body, html {
+    background: purple !important; } }
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (min-width: 40.063em) {
+  body, html {
+    background: blue !important; } }
+/* min-width 641px, medium screens */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (min-width: 64.063em) {
+  body, html {
+    background: teal !important; } }
+/* min-width 1025px, large screens */
+/* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+/* min-width 1441px, xlarge screens */
+/* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+/* min-width 1921px, xxlarge screens */

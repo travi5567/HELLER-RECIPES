@@ -1,0 +1,33 @@
+//COLOR VARIABLES
+$lightTeal: teal; 
+$teal: darken($lightTeal, 10%); 
+$orange: #f38c4b;
+$lightOrange: #ffa568;
+$grey: #363c3f;
+$white: #ffffff;
+
+$base__font-size: 1em;
+//ZURB DEFAULT VARIABLES
+// $mainColor:	#2ba6cb;
+// $secondaryColor: #e9e9e9;
+// $alertColor: #c60f13;
+// $successColor: #5da423;
+// $txtColor: #222;
+// $highlightColor: #ffff99;
+// $black: #000;
+// $white: #fff;
+// $shinyEdge: rgba(#fff, .5);
+// $darkEdge: rgba(#000, .2);
+
+// HELPER FUNCTIONS
+@import 'helper.scss';
+@import '_color-map.scss';
+@import '_color-generator.scss';
+@import 'mixins.scss';
+
+
+
+@import 'fonts.scss';
+@import 'style.scss';
+@import 'mq.scss';
+

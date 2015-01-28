@@ -1,0 +1,905 @@
+html {
+	min-height: 100%;
+}
+body, html {
+	min-height: 100%;
+	background: $lightTeal;
+	margin: 0;
+	padding: 50px 0 50px 0;
+}
+.hide {
+	display: none !important;
+}
+a {
+	font-weight: bold;
+	color: $orange;
+}
+.noPadding {
+	padding: 0 !important;
+}
+.noMargin {
+	margin: 0 !important;
+}
+.noSpace {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.center-text {
+	text-align: center !important;
+}
+#container {
+	width: 70%;
+	margin-left: 15%;
+	background: #111;
+	padding: 20px;
+	h1,p,h2 {
+		color: color(bubblegum);
+	}
+}
+h1 {
+	font-weight: bold;
+}
+button.btn.dark {
+	background: $grey !important;
+	display: block;
+	float: none;
+	width: 100%;
+	color: $orange;
+	@include border-radius(10px);
+	a {
+		color: $white;
+		text-align: left;	
+	}
+}	
+.btn.button {
+	background: $grey;
+	outline: none;
+	border: none;
+	&:hover,&:focus{
+		background: darken($grey, 5%) !important;
+		outline: none;
+		border: none;
+	}
+}
+
+//NAVIGATION-HEADER
+#navigation-header {
+	background: $grey;
+	position: fixed;
+	z-index: 200;
+	width: 100%;
+	margin: 0;
+	top: 0;	
+	.removePadding {
+		padding: 0 5px;
+	}
+	.logo {
+		float: left;
+		padding-right: 10px;
+		h1 {
+			color: $orange;
+			span {
+				color: $lightTeal;
+			}
+		}
+	}
+	div.page-title {
+		float: left;
+		p {
+			color: $white !important;
+			text-align: left;
+			margin-top: 15px;
+		}
+	}
+	.menu-toggle {
+		float: right;
+		font-size: 35px;
+		span.username {
+			float: left;
+			color: $white;
+			font-size: 22px;
+			margin-top: 15px;
+			margin-right: 15px;
+		}
+		a {
+			display: block;
+			float: left;
+			margin-top: 20px;
+			padding: 0;
+			text-decoration: none;
+			color: $lightTeal;
+			font-size: 14px;
+		}
+	}
+}
+
+//BOTTOM-NAV
+#bottom-nav {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	.columns {
+		padding: 0;
+		margin: 0;
+		&:first-child {
+			border-right: 2px solid #3f464a;
+		}
+		&:last-child {
+			border-left: 2px solid #2e3336;
+		}
+	}
+	.signin, .create-account {
+		background: $grey;
+		overflow: hidden;
+	}
+	button.button {
+		background: $grey;
+		color: $white;
+		margin-bottom: 0;
+		width: 100%;
+		border: none;
+		display: inline;
+		float: left;
+		font-size: calcem(24);
+		padding: 20px 0;
+		&:hover {
+			background: lighten($grey, 3%);
+		}
+		a {
+			width: 100%;
+			display: block;
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+	.inactive-btn {
+		color: darken($grey, 5%) !important;
+	}
+}
+
+//SIGN IN FORM -USERNAME-PASSWORD
+.sign-in-container, .sign-up-container {
+	width: 70%;
+	margin-left: 15%;
+	overflow: hidden;
+	@include border-radius(15px); 
+	background: $orange;
+	text-align: center;
+	color: $grey;
+	a {
+		color: $grey;
+		text-decoration: underline;
+		display: block;
+		width: 60%;
+		clear: both;
+		margin: 20px 0 20px 20%;
+		font-size: calcem(22);
+		text-align: center;
+		padding: 10px;
+	}
+	.btn.small {
+		background: $orange;
+		float: left;
+		color: $white;
+		text-align: left;
+		border-style: solid;
+		border-width: 0px;
+		cursor: pointer;
+		font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+		font-weight: normal;
+		line-height: normal;
+		margin: 10px 0 1.25rem;
+		position: relative;
+		text-decoration: none;
+		text-align: center;
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		display: inline-block;
+		padding-top: 0.5rem;
+		padding-right: 1rem;
+		padding-bottom: 1.0625rem;
+		padding-left: 1rem;
+		font-size: calcem(14);
+		background-color: #ffa568;
+		border-color: #007095;
+		color: #fff;
+		transition: background-color 300ms ease-out;
+	}
+	input.upload-image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		font-size: calcem(20);
+		cursor: pointer;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+	h1 {
+		color: $grey;
+		margin: 20px 0;
+	}
+	form#sign-in-form, form#sign-up-form, form#create-account-form {
+		width: 60%;
+		margin-left: 20%;
+		
+		p {
+			margin: 5px;
+			label {
+				display: inline;
+				float: left;
+				width: 20%;
+				cursor: arrow !important;
+				margin-top: 25px;
+				text-align: left;
+				font-weight: bold;
+			}
+			input {
+				display: inline;
+				width: 80%;
+				float: left;
+				margin: 20px 0;
+				font-size: calcem(18);
+			}
+		}
+		p.submit {
+			clear: both;
+			input {
+				width: 100%;
+			}
+		}
+		
+		button.submit {
+			display: block;
+			width: 100%;
+			font-size: calcem(24);
+			background: $lightOrange;
+		}
+		button.forgot-info {
+			display: block;
+			width: 100%;
+			font-size: calcem(14);
+			margin-top: 30px;
+			color: $grey;
+			background: $lightOrange;
+		}
+
+		.checkbox-wrapper {
+			text-align: left;
+			overflow: hidden;
+			margin: 20px 0;
+			.email-notifications {
+				margin: 0;
+				padding: 0;	
+				float: left;
+			}
+			p {
+				margin: 0 10px 0;
+				padding: 0 0 0 10px;	
+				line-height: 1rem;
+			}
+		}
+	}
+	.profile-image-holder {
+		position: relative;
+		width: 150px;
+		height: 170px;
+		padding: 0;
+		margin-top: 20px;
+		background: white;
+		i {
+			bottom: -60px;
+			left: 14px;
+			position: absolute;
+			font-size: calcem(190);
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+//VIEW USERS PAGE -ECHO OUT ALL MEMBERS
+.view_users-container {
+	width: 70%;
+	margin-left: 15%;
+	overflow: hidden;
+	@include border-radius(15px); 
+	text-align: center;
+	color: $grey;
+	ul {
+		li {
+			text-align: left;
+		}
+	}
+	button.btn {
+		background: $orange;
+		display: block;
+		cursor: default;
+		float: none;
+		width: 100%;
+		a {
+			color: $white;
+			text-align: left;	
+		}
+	}	
+}
+
+//MEMBERS-PAGE
+.members-container {
+	width: 70%;
+	margin-left: 15%;
+	overflow: hidden;
+	@include border-radius(15px); 
+	text-align: center;
+	padding-top: 25px;
+	color: $grey;
+	button.btn {
+		background: $orange;
+		display: block;
+		float: none;
+		padding: 0;
+		width: 100%;
+		a {
+			color: $white;
+			padding: 10px 15px;
+			text-align: left;
+			width: 100%;
+			display: block;
+		}
+	}	
+}
+
+//WELCOME SCREEN FOR LOGGED IN USERS
+.welcome-container {
+	width: 70%;
+	margin-left: 15%;
+	overflow: hidden;
+	color: $grey;
+	h1 {
+		color: $grey;
+		margin: 20px 0;
+	}
+	button.btn {
+		background: $orange;
+		display: block;
+		float: none;
+		width: 100%;
+		color: $white;
+		text-align: left;     
+	}	
+}
+
+//ADD RECIPE FROM PAGE
+.add-recipe-container {
+	overflow: hidden;
+	form {
+		fieldset {
+			margin: 0 0 5px 0;
+			padding: 5px 0 0 0;
+			clear: both;
+			border: none;
+		}
+		label {
+			color: black;
+		}
+		legend {
+			color: black;
+			background: none;
+			margin: 0;
+			padding: 0;
+		}
+		input {
+			font-size: calcem(14);
+		}
+		textarea {
+			min-height: 100px;
+		}
+		.genre {
+			p {
+				display: inline-block;
+			}
+			input[type="checkbox"]{
+				margin: 5px 15px;
+			}
+		}
+		.recipe-photo {
+			.profile-image-holder {
+				position: relative;
+				width: 150px;
+				height: 100px;
+				padding: 0;
+				margin-top: -20px;
+				background: white;
+				i {
+					left: 14px;
+					bottom: -40px;
+					position: absolute;
+					font-size: calcem(120);
+					margin: 0;
+					padding: 0;
+				}
+			}
+			.btn {
+				background: $orange;
+				float: none;
+				color: $white;
+				text-align: left;
+				border-style: solid;
+				border-width: 0px;
+				cursor: pointer;
+				font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+				font-weight: normal;
+				line-height: normal;
+				margin: 0 0 1.25rem;
+				position: relative;
+				text-decoration: none;
+				text-align: center;
+				-webkit-appearance: none;
+				-webkit-border-radius: 0;
+				display: inline-block;
+				padding-top: 1rem;
+				padding-right: 2rem;
+				padding-bottom: 1.0625rem;
+				padding-left: 2rem;
+				font-size: 1rem;
+				background-color: #ffa568;
+				border-color: #007095;
+				color: #fff;
+				transition: background-color 300ms ease-out;
+			}
+			input.upload-image {
+				position: absolute;
+				top: 0;
+				right: 0;
+				margin: 0;
+				padding: 0;
+				font-size: calcem(20);
+				cursor: pointer;
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+		}
+		
+		.ingredient-set {
+			padding: 5px;
+			background: darken($lightTeal, 15%);
+			overflow: hidden;
+			@include border-radius(5px);
+			margin: 0 0 10px 0;
+			input {
+				margin: 0;
+			}
+		}
+		.rating {
+	    	float: left;
+		}
+		/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+		   follow these rules. Every browser that supports :checked also supports :not(), so
+		   it doesn’t make the test unnecessarily selective */
+		.rating:not(:checked) > input {
+		    position: absolute;
+		    top: -9999px;
+		    clip: rect(0,0,0,0);
+		}
+		.rating:not(:checked) > label {
+		    float: right;
+		    width: 1.2em;
+		    padding: 0 .1em;
+		    overflow: hidden;
+		    white-space: nowrap;
+		    cursor: pointer;
+		    font-size: 120%;
+		    line-height: 1.5;
+		    color: $lightTeal;
+		    text-shadow: 0px 2px 3px black;
+		  	-webkit-background-clip: text;
+		    -moz-background-clip: text;
+		    background-clip: text;
+		}
+		.rating:not(:checked) > label:before {
+		    content: '★ ';
+		}
+		.rating > input:checked ~ label {
+		    color: $orange;
+		}
+		.rating:not(:checked) > label:hover,
+		.rating:not(:checked) > label:hover ~ label {
+		    color: $orange;
+		    
+		}
+		.rating > input:checked + label:hover,
+		.rating > input:checked + label:hover ~ label,
+		.rating > input:checked ~ label:hover,
+		.rating > input:checked ~ label:hover ~ label,
+		.rating > label:hover ~ input:checked ~ label {
+		    color: $orange;
+		}
+		.rating > label:active {
+		    position:relative;
+		    top:2px;
+		    left:2px;
+		}
+	}
+}
+
+//LIST OF ALL RECIPES PAGE
+.recipes-container, .update-recipes-container {
+	.recipes {
+		margin-top: 20px;
+	}
+	.filter {
+		p {
+			font-weight: bold;
+			color: $grey;
+			span {
+				background: $lightOrange;
+				padding: 5px 10px;
+				cursor: pointer;
+				color: $white;
+			}
+		}
+	}
+	.back-btn {
+		background: $grey;
+		width: 96%;
+		@include border-radius(10px);
+		font-size: 1em;
+		text-align: left;
+		padding: 10px;
+		margin-left: 10px;
+		&:hover {
+			background: lighten($grey, 2%);
+		}
+		a {
+			color: $white;
+			display: inline-block;
+			width: 100%;
+			padding: 10px;
+			line-height: 100%;
+			i {
+				margin-top: 0;
+				margin-right: 10px;
+				font-size: 1em;
+			}
+		}
+	}
+	i {
+		margin-right: 15px;
+	}
+	#search-form {
+		margin: 0;
+		#search {
+			display: block;
+			width: 100% !important;
+			margin: 0 !important;
+			border: none;
+		}
+		#btn-search {
+			width: 100% !important;
+			background: $grey;
+			border: none;
+			color: $white;
+			cursor: pointer;
+			padding: 10px;
+		    @include border-radius(10px);
+			margin-top: 0;
+			font-size: 1em;
+			margin-right: 5px;
+			&:hover, &:focus {
+				background: lighten($grey, 2%);
+			}
+
+		}
+		label {
+			display: block;
+			float: left;
+			font-weight: bold;
+			padding-top: 5px;
+		}
+		@include placeholder($white);
+		p {
+			float: left;
+		}
+		p.search {
+			float: left;
+		}
+		input[name="search"] {
+			float: right;
+			display: block;
+		    background: $lightOrange;
+		    border: 1px solid #d1d1d1;
+		    font: bold calcem(14) Arial,Helvetica,Sans-serif;
+		    color: $white;
+		    padding: 6px 15px 6px 35px;
+		    @include border-radius(10px);
+		    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+		    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		    -webkit-transition: all 0.7s ease 0s;
+		    -moz-transition: all 0.7s ease 0s;
+		    -o-transition: all 0.7s ease 0s;
+		    transition: all 0.7s ease 0s;
+		}
+		
+		input[type="text"]:focus {
+		    width: 200px;
+		}
+	}
+	h1 {
+		font-size: 0.8em;
+		margin: 0;
+		padding: 0;
+	}
+	.heading {
+		margin-top: 20px;
+		padding: 0 10px;	
+	}
+	.recipe:first-child{
+		margin-top: 0;
+	}
+	.recipe {
+		background: $orange;
+		overflow: hidden;
+		margin: 10px 0;
+		width: 100%;
+		padding: 10px;
+		@include border-radius(10px);
+		h1 {
+			font-size: 1em;
+			text-transform: uppercase;
+		}
+		a {
+			color: $grey;
+			float: right;
+			padding-top: 5px;
+			padding-right: 10px;
+			&:hover i, &:hover {
+				color: $lightOrange;
+			}
+		}
+		i {
+			color: $grey;
+			&:hover {
+				color: $lightOrange;
+			}
+		}
+		.top-heading {
+			padding-bottom: 15px;
+		}
+		.bottom-info {
+
+		}
+		.recipe-info {
+			p {
+				color: $grey;
+			}
+			p.name {
+				font-weight: bold;
+			}
+			button.btn {
+				background: $grey;
+				outline: none;
+				border: none;
+				&:hover,&:focus{
+					background: darken($grey, 5%);
+					outline: none;
+					border: none;
+				}
+			}
+			.show {
+					display: block !important;
+				}
+				i {
+					margin-left: 15px;
+					color: $white;
+				}
+			.directions {
+				display: none;
+				height: auto;
+				padding: 10px;
+				background: $lightOrange;
+				width: 100%;
+				@include border-radius(10px);
+				@include border-radius(10px);
+				p {
+					
+				}
+			}
+		}
+		.header-info {
+			float: right;
+			p.block {
+				background: $lightOrange;
+				padding: 3px 10px;
+				font-size: 0.7em;
+				display: inline-block;
+				i {
+					margin-right: 10px;
+					font-weight: bold;
+				}
+			}
+		}
+		.recipe-thumb {
+			img {
+				float: right;
+			}
+		}
+	}	
+}
+
+.update-recipes-container {
+
+	form#update-recipe-form {
+		legend, label {
+			margin: 0;
+			padding: 0;
+			background: none !important;
+			color: $white;
+			font-weight: bold;
+			letter-spacing: 0.1em;
+		}
+		input, textarea, select {
+			padding: 5px 0 0 5px;
+			margin: 10px 0 15px 0;
+		}
+	}
+}
+//MEMBER-NAVIFATION STYLING
+.member-nav {
+	margin: 40px 0;
+}
+
+//STOPWACTH PAGE
+.stopwatch-container {
+	width: 90%;
+	margin-left: 5%;
+	overflow: hidden;
+	padding: 10px;
+	@include border-radius(15px); 
+	background: $orange;
+	color: $grey;
+	.timer {
+		overflow: hidden;
+		display: inline-block;
+		position: relative;
+	}
+
+	.cell {
+		/*Should only display 1 digit. Hence height = line height of .numbers
+		and width = width of .numbers*/
+		width: 2em;
+		height: 40px;
+		font-size: 0.8em;
+		overflow: hidden;
+		position: relative;
+		float: left;
+	}
+
+	.numbers {
+		width: 0.6em;
+		line-height: 40px;
+		font-family: digital, arial, verdana;
+		text-align: center;
+		color: #fff;
+		font-size: 1em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		/*Glow to the text*/
+	}
+
+	/*Styles for the controls*/
+	#timer_controls {
+
+	}
+	#timer_controls label {
+		cursor: pointer;
+		float: left;
+		margin: 10px;
+		padding: 5px 10px;
+		background: $lightOrange;
+		font-family: arial, verdana, tahoma;
+		font-size: 0.8em;
+		font-weight: bold;
+		border-radius: 0 0 3px 3px;
+	}
+	input[name="controls"] {display: none;}
+
+	/*Control code*/
+	#stop:checked~.timer .numbers {animation-play-state: paused;}
+	#start:checked~.timer .numbers {animation-play-state: running;}
+	#reset:checked~.timer .numbers {animation: none;}
+
+	.moveten {
+		/*The digits move but dont look good. We will use steps now
+		10 digits = 10 steps. You can now see the digits swapping instead of 
+		moving pixel-by-pixel*/
+		animation: moveten 1s steps(10, end) infinite;
+		/*By default animation should be paused*/
+		animation-play-state: paused;
+	}
+	.movesix {
+		animation: movesix 1s steps(6, end) infinite;
+		animation-play-state: paused;
+	}
+
+	/*Now we need to sync the animation speed with time speed*/
+	/*One second per digit. 10 digits. Hence 10s*/
+	.second {animation-duration: 10s;}
+	.tensecond {animation-duration: 60s;} /*60 times .second*/
+
+	.milisecond {animation-duration: 1s;} /*1/10th of .second*/
+	.tenmilisecond {animation-duration: 0.1s;}
+	.hundredmilisecond {animation-duration: 0.01s;}
+
+	.minute {animation-duration: 600s;} /*60 times .second*/
+	.tenminute {animation-duration: 3600s;} /*60 times .minute*/
+
+	.hour {animation-duration: 36000s;} /*60 times .minute*/
+	.tenhour {animation-duration: 360000s;} /*10 times .hour*/
+
+	/*The stopwatch looks good now. Lets add some styles*/
+
+	/*Lets animate the digit now - the main part of this tutorial*/
+	/*We are using prefixfree, so no need of vendor prefixes*/
+	/*The logic of the animation is to alter the 'top' value of the absolutely
+	positioned .numbers*/
+	/*Minutes and Seconds should be limited to only '60' and not '100'
+	Hence we need to create 2 animations. One with 10 steps and 10 digits and
+	the other one with 6 steps and 6 digits*/
+	@keyframes moveten {
+		0% {top: 0;}
+		100% {top: -400px;} 
+		/*height = 40. digits = 10. hence -400 to move it completely to the top*/
+	}
+
+	@keyframes movesix {
+		0% {top: 0;}
+		100% {top: -240px;} 
+		/*height = 40. digits = 6. hence -240 to move it completely to the top*/
+	}
+
+
+	/*Lets use a better font for the numbers*/
+	@font-face {
+		font-family: 'digital';
+		src: url('http://thecodeplayer.com/uploads/fonts/DS-DIGI.TTF');
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
