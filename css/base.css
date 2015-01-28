@@ -323,16 +323,16 @@ button.btn.dark {
   width: 70%;
   margin-left: 15%;
   overflow: hidden;
+  padding-top: 150px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   border-radius: 15px;
   text-align: center;
-  padding-top: 25px;
   color: #363c3f; }
   .members-container button.btn {
-    background: #f38c4b;
+    background: #004d4d;
     display: block;
     float: none;
     padding: 0;
@@ -490,9 +490,10 @@ button.btn.dark {
 .recipes-container, .update-recipes-container {
   background: teal;
   height: 100%;
-  padding-top: 50px; }
+  padding-top: 100px;
+  padding-bottom: 100px; }
   .recipes-container .recipes, .update-recipes-container .recipes {
-    margin-top: 20px; }
+    margin: 20px 0 100px 0; }
   .recipes-container .filter p, .update-recipes-container .filter p {
     font-weight: bold;
     color: #004d4d; }
@@ -633,7 +634,8 @@ button.btn.dark {
     .recipes-container .recipe .bottom-info, .update-recipes-container .recipe .bottom-info {
       background: #ffffff;
       overflow: hidden;
-      padding: 10px 0; }
+      padding: 10px 0;
+      margin: 10px; }
       .recipes-container .recipe .bottom-info a, .update-recipes-container .recipe .bottom-info a {
         color: #363c3f;
         float: right;
