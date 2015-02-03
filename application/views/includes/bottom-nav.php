@@ -11,7 +11,7 @@
 				<button class="button"><a href="'.site_url('addRecipe/recipes').'"><i class="fi-book"></i>Recipes</a></button>
 			</div>
 			<div class="small-3 columns">
-				<button class="button"><a href="'.site_url('addRecipe').'"><i class="fi-plus"></i>Add Recipes</a></button>
+				<button class="button"><a href="'.site_url('uploadimage/view_image').'"><i class="fi-plus"></i>Add Recipes</a></button>
 			</div>
 		</div><!-- END OF BOTTOM-NAV -->';
 	} else {

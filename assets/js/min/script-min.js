@@ -1,1 +1,1 @@
-$(function(){var i=$(".top-heading"),t=$(".bottom-info");t.hide(),i.on("click",function(){"block"===$(this).next("div").css("display")?$(this).next("div").fadeOut():$(this).next("div").fadeIn()})});
+$(function(){var i=$(".top-heading"),t=$(".bottom-info");t.hide(),i.on("click",function(){if("block"===$(this).next("div").css("display"))$(this).next("div").fadeOut();else{t.hide(),$(this).next("div").fadeIn();var i=$(this).next().find("i").text();console.log(i)}})});

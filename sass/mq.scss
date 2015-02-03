@@ -8,13 +8,24 @@
                 }
             }    
         }
-        .logo {
-            float: left;
-            padding-right: 10px;
-            a {
-                h1 {
-                    font-size: 1.5em;
-                    color: $white;
+        #navigation-header {
+            .logo {
+                a {
+                    h1 {
+                        font-size: 1.5em;
+                        color: $white;
+                    }
+                }
+                p {
+                    margin-top: 10px !important;
+                    padding-top: 0 !important;
+                }
+            }
+        }
+        .recipes-container {
+            #search-form {
+                #btn-search {
+                    font-size: 0.8em;
                 }
             }
         }
@@ -79,7 +90,14 @@
                 }
             }
         }
-     }
+        .view_comments-container{
+            width: 90%;
+            margin-top: 100px;
+            padding-bottom: 100px;
+            margin-left: 5%;
+            overflow: hidden;
+        }
+    }
  } /* Define mobile styles */
 
 @media only screen and(max-width: 40em) {
@@ -91,6 +109,20 @@
     @media screen and(orientation: landscape) {
         
     }
+    #navigation-header {
+        .logo {
+            a {
+                h1 {
+                    font-size: 1.5em;
+                    color: $white;
+                }
+            }
+            p {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+        }
+    }
 
  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
@@ -99,13 +131,26 @@
 @media only screen and(min-width: 40.063em) {
     body, html {
         background: $lightTeal !important;
-        .logo {
-            float: left;
-            padding-right: 10px;
-            a {
-                h1 {
-                    font-size: 2.5em !important;
-                    color: $white;
+        #navigation-header {
+            .logo {
+                a {
+                    h1 {
+                        font-size: 2.5em;
+                        color: $white;
+                    }
+                }
+                p {
+                    margin-top: 20px !important;
+                    padding-top: 0 !important;
+                }
+            }
+            .menu-toggle {
+                margin-top: 20px;
+                a {
+                    font-size: 1em;
+                }
+                span.username {
+                    font-size: 1em;
                 }
             }
         }
@@ -123,16 +168,6 @@
                 }
             }
         }
-        #navigation-header {
-            .menu-toggle {
-                span {
-                    font-size: 0.5em;
-                }
-                span.username {
-                    font-size: 0.5em;
-                }
-            }
-        }
     }
     
 } /* min-width 641px, medium screens */
@@ -146,6 +181,7 @@
 @media only screen and(min-width: 64.063em) {
     body, html {
         background: $lightTeal !important;
+        height: 100%;
     }
 } /* min-width 1025px, large screens */
 

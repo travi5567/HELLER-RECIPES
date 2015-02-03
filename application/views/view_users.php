@@ -6,7 +6,7 @@
 					$user_name = $row->firstname;
 				    $user_email = $row->email; 
 				?>
-				<button class="btn"><?php echo $user_name ?></button>
+				<button class="btn"><i class="fi-torso"></i><?php echo $user_name ?></button>
 			<? endforeach; ?>
 		</div>
 	</div>

@@ -108,7 +108,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('recipe_model', 'model_users');
+$autoload['model'] = array('recipe_model', 'model_users', 'model_comments');
 
 
 /* End of file autoload.php */

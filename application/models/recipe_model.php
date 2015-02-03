@@ -18,6 +18,14 @@ Class Recipe_model extends CI_Model {
 		return;
 	}
 
+	function insert_images($image_data = array()){
+      	$data = array(
+          	'image' => $image_data['file_name'],
+          	'imagePath' => $image_data['full_path']
+      	);
+     	$this->db->insert('recipes', $data);
+	}
+
 	function update_recipe($data){
 		$id = $data['id'];
 		if($id){

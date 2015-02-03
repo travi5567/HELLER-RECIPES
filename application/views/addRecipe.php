@@ -25,11 +25,12 @@
 					echo form_textarea('recipe_directions');
 
 					echo form_label('Recipe Genre:', 'recipe_genre');
-					$genre_options = array('Soup' => 'Soup',
+					$genre_options = array('Appetizers' => 'Appetizers',
+										   'Soup' => 'Soup',
 					                       'Breakfast' => 'Breakfast',
 					                       'Chicken' => 'Chicken',
 					                       'Pork' => 'Pork',
-					                       'Desert' => 'Desert',
+					                       'Dessert' => 'Dessert',
 					                       'Appetizers' => 'Appetizers',
 					                       'Healthy' => 'Healthy',
 					                       'Main Dish' => 'Main Dish',
@@ -39,14 +40,15 @@
 					$selected = ($this->input->post('genre')) ? $this->input->post('genre') : 'Recipe genre';                        
 					echo form_dropdown('recipe_genre', $genre_options, $selected);
 
-					echo form_label('Link to Recipe Image:', 'recipe_link');
-					echo form_input('recipe_link');
+					echo form_label('Upload Recipe Image:', 'userfile');
+					echo form_upload('userfile');
 					$data = array(
-					      'name'        => 'recipe_update',
+					      'name'        => 'add_recipe',
 					      'value'       => 'Update Recipe',
-					      'class'       => 'btn button'
-					    );?>
-					<button class="btn" type="submit" name="add_recipe">Add Recipe</button>
+					      'class'       => 'button btn'
+					    );
+					echo form_submit($data);
+					    ?>
 			<?php echo form_close(); ?>
 		</div>
 	</div>

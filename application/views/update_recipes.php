@@ -1,5 +1,5 @@
 <div class="update-recipes-container">
-<div class="row">
+	<div class="row">
 		<div class="small-12 column noSpace">
 			<button class="btn back-btn"><a href="<?php echo base_url('addRecipe/recipes') ?>"><i class="fi-arrow-left"></i>Back to Recipes</a></button>
 		</div>
@@ -13,10 +13,10 @@
 						$recipe_id =  $row->id;
 					    $recipe_description =  $row->description; 
 					    $recipe_directions =  $row->directions; 
-					    $recipe_link =  $row->link; 
 					    $recipe_genre =  $row->genre; 
 					    $posted =  $row->posted; 
-					    $rating =  $row->stars; 
+					    $rating =  $row->stars;
+					    $image =  $row->image; 
 					?>
 				<?php endforeach; ?>
 				<div class="recipe">
@@ -34,7 +34,7 @@
 								<p class="directions"><?php echo $recipe_directions; ?></p>
 							</div>
 							<div class="small-4 columns">
-								<img src="<?php echo $recipe_link; ?>" alt="<?php echo $recipe_link; ?>">
+								<img src="<?php echo site_url('assets/uploads/'. $image);?>" alt="" />
 							</div>
 						</div>
 				</div>
@@ -42,14 +42,13 @@
 			<div class="form">
 				<?php 
 					$attributes = array('id' => 'update-recipe-form');
-		    		echo form_open('addRecipe/update', $attributes);
+			 		echo form_open_multipart('uploadimage/update_recipe/'.$recipe_id.'', $attributes);
 					$data = array(
 					          'class' => 'hide',
 					          'name' => 'recipe_id',
 					          'value' => $recipe_id
 					        );
 					echo form_input($data);
-				 
 					echo form_label('Title:', 'recipe_name');
 					echo form_input('recipe_name', $recipe_title);
 
@@ -84,8 +83,9 @@
 					$selected = ($this->input->post('genre')) ? $this->input->post('genre') : $recipe_genre;                        
 					echo form_dropdown('recipe_genre', $genre_options, $selected);
 
-					echo form_label('Link to Recipe Image:', 'recipe_link');
-					echo form_input('recipe_link', $recipe_link);
+					echo form_label('Upload Recipe Image:', 'userfile');
+					echo form_upload('userfile');
+
 					$data = array(
 					      'name'        => 'recipe_update',
 					      'value'       => 'Update Recipe',

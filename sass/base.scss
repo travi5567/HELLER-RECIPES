@@ -1,6 +1,6 @@
 //COLOR VARIABLES
-$lightTeal: teal; 
-$teal: darken($lightTeal, 10%); 
+$lightTeal: lighten(teal, 10%); 
+$teal: darken(teal, 10%); 
 $orange: #f38c4b;
 $lightOrange: #ffa568;
 $grey: #363c3f;

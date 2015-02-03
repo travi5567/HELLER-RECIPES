@@ -1,11 +1,17 @@
 html {
-	height: 100%;
 }
 body, html {
-	height: 100%;
 	background: $lightTeal;
 	margin: 0;
 	padding: 0;
+}
+.bgOverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: url(../assets/images/white_tiles_@2X.png) repeat;
+	@include opacity(0.3);
 }
 .hide {
 	display: none !important;
@@ -43,11 +49,18 @@ blockquote {
 h1 {
 	font-weight: bold;
 }
+.lead {
+	font-weight: bold;
+	color: lighten($grey, 40%);
+}
 button {
 	background: $teal;
 	&:hover,&:focus {
 		background: darken($teal, 5%);
 	}
+}
+input[type="file"]{
+	border: none !important;
 }
 button.btn.dark {
 	background: $grey !important;
@@ -93,11 +106,21 @@ button.btn.dark {
 	.logo {
 		float: left;
 		padding-right: 10px;
-		h1 {
-			color: $white;
-			span {
-				color: $lightTeal;
+		a {
+			h1 {
+				font-size: 4em;
+				float: left;
+				color: $white;
+				span {
+					color: $lightTeal;
+				}
 			}
+		}
+		p {
+			float: left;
+			color: $white;
+			margin-top: 20px;
+			margin-left: 5px;
 		}
 	}
 	div.page-title {
@@ -268,6 +291,13 @@ button.btn.dark {
 				float: left;
 				margin: 20px 0;
 				font-size: calcem(18);
+				border: 2px solid $lightTeal;
+			}
+			textarea, select {
+				border: 2px solid $lightTeal;
+			}
+			input[type="file"]{
+				border: none;
 			}
 		}
 		p.submit {
@@ -326,9 +356,96 @@ button.btn.dark {
 	}
 }
 
-//VIEW USERS PAGE -ECHO OUT ALL MEMBERS
+//VIEW Recipe Comments PAGE
+.view_comments-container{
+	width: 70%;
+	margin-top: 100px;
+	padding-bottom: 100px;
+	margin-left: 15%;
+	overflow: hidden;
+	@include border-radius(15px); 
+	color: $grey;
+	.comments {
+		h1 {
+			font-size: 1.5em;
+			color: $white;
+		}
+		h2 {
+			font-size: 1.2em;
+			color: $teal;
+			text-transform: uppercase;
+		}
+		button {
+			background: $teal;
+		}
+		button.btn {
+			background: $teal;
+			display: block;
+			float: none;
+			padding: 0;
+			width: 100%;
+			a {
+				color: $white;
+				padding: 10px 15px;
+				text-align: left;
+				width: 100%;
+				display: block;
+			}
+			i {
+				margin-right: 10px;
+			}
+		}
+		form#addCommentForm {
+			label {
+				color: $teal;
+				font-weight: bold;
+				padding-bottom: 5px;
+			}
+		}
+		.comment {
+			position: relative;
+			background: $white;
+			padding: 20px 10px 10px 10px;
+			@include border-radius(10px);
+			margin: 20px 0;
+			overflow: hidden;
+			p {
+				span {
+					font-weight: bold;
+				}
+			}
+			i {
+				margin-right: 10px;
+				color: lighten($grey, 40%);
+			}
+			p.recipe-comment {
+				float: none;
+				display: block;
+				margin: 0 0 15px 0;
+				padding: 0;
+			}
+			p.recipe-author {
+				float: left;
+				display: block;
+				margin: 0;
+				padding: 0;
+				font-style: italic;
+				font-size: 0.7em;
+				text-transform: capitalize;
+			}
+			span.recipe-title {
+				float: none;
+				font-size: 0.7em;
+				color: lighten($grey, 40%);
+			}
+		}
+	}
+}
+
+//VIEW USERS PAGE
 .view_users-container {
 	width: 70%;
+	margin-top: 100px;
 	margin-left: 15%;
 	overflow: hidden;
 	@include border-radius(15px); 
@@ -340,7 +457,7 @@ button.btn.dark {
 		}
 	}
 	button.btn {
-		background: $orange;
+		background: $teal;
 		display: block;
 		cursor: default;
 		float: none;
@@ -348,6 +465,9 @@ button.btn.dark {
 		a {
 			color: $white;
 			text-align: left;	
+		}
+		i {
+			margin-right: 10px;
 		}
 	}	
 }
@@ -402,12 +522,18 @@ button.btn.dark {
 }
 
 //ADD RECIPE FROM PAGE
-.add-recipe-container {
-	#add-recipe-form {
+.add-recipe-container, .upload-image-container {
+	#add-recipe-form, #upload-image-form {
 		margin: 50px 0;
 		padding: 50px 0;
 		h1 {
 			color: $white;
+		}
+		input, textarea, select {
+			border: 2px solid $lightTeal;
+		}
+		input[type="file"]{
+			border: none;
 		}
 		label {
 			color: $teal;
@@ -438,131 +564,6 @@ button.btn.dark {
 		textarea {
 			min-height: 100px;
 		}
-		.genre {
-			p {
-				display: inline-block;
-			}
-			input[type="checkbox"]{
-				margin: 5px 15px;
-			}
-		}
-		.recipe-photo {
-			.profile-image-holder {
-				position: relative;
-				width: 150px;
-				height: 100px;
-				padding: 0;
-				margin-top: -20px;
-				background: white;
-				i {
-					left: 14px;
-					bottom: -40px;
-					position: absolute;
-					font-size: calcem(120);
-					margin: 0;
-					padding: 0;
-				}
-			}
-			.btn {
-				background: $orange;
-				float: none;
-				color: $white;
-				text-align: left;
-				border-style: solid;
-				border-width: 0px;
-				cursor: pointer;
-				font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-				font-weight: normal;
-				line-height: normal;
-				margin: 0 0 1.25rem;
-				position: relative;
-				text-decoration: none;
-				text-align: center;
-				-webkit-appearance: none;
-				-webkit-border-radius: 0;
-				display: inline-block;
-				padding-top: 1rem;
-				padding-right: 2rem;
-				padding-bottom: 1.0625rem;
-				padding-left: 2rem;
-				font-size: 1rem;
-				background-color: #ffa568;
-				border-color: #007095;
-				color: #fff;
-				transition: background-color 300ms ease-out;
-			}
-			input.upload-image {
-				position: absolute;
-				top: 0;
-				right: 0;
-				margin: 0;
-				padding: 0;
-				font-size: calcem(20);
-				cursor: pointer;
-				opacity: 0;
-				filter: alpha(opacity=0);
-			}
-		}
-		
-		.ingredient-set {
-			padding: 5px;
-			background: darken($lightTeal, 15%);
-			overflow: hidden;
-			@include border-radius(5px);
-			margin: 0 0 10px 0;
-			input {
-				margin: 0;
-			}
-		}
-		.rating {
-	    	float: left;
-		}
-		/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
-		   follow these rules. Every browser that supports :checked also supports :not(), so
-		   it doesn’t make the test unnecessarily selective */
-		.rating:not(:checked) > input {
-		    position: absolute;
-		    top: -9999px;
-		    clip: rect(0,0,0,0);
-		}
-		.rating:not(:checked) > label {
-		    float: right;
-		    width: 1.2em;
-		    padding: 0 .1em;
-		    overflow: hidden;
-		    white-space: nowrap;
-		    cursor: pointer;
-		    font-size: 120%;
-		    line-height: 1.5;
-		    color: $lightTeal;
-		    text-shadow: 0px 2px 3px black;
-		  	-webkit-background-clip: text;
-		    -moz-background-clip: text;
-		    background-clip: text;
-		}
-		.rating:not(:checked) > label:before {
-		    content: '★ ';
-		}
-		.rating > input:checked ~ label {
-		    color: $orange;
-		}
-		.rating:not(:checked) > label:hover,
-		.rating:not(:checked) > label:hover ~ label {
-		    color: $orange;
-		    
-		}
-		.rating > input:checked + label:hover,
-		.rating > input:checked + label:hover ~ label,
-		.rating > input:checked ~ label:hover,
-		.rating > input:checked ~ label:hover ~ label,
-		.rating > label:hover ~ input:checked ~ label {
-		    color: $orange;
-		}
-		.rating > label:active {
-		    position:relative;
-		    top:2px;
-		    left:2px;
-		}
 	}
 }
 
@@ -570,7 +571,7 @@ button.btn.dark {
 .recipes-container, .update-recipes-container {
 	background: $lightTeal;
 	height: 100%;
-	padding-top: 80px;
+	padding-top: 100px;
 	padding-bottom: 100px;
 	.recipes {
 		margin: 20px 0 100px 0;
@@ -618,7 +619,8 @@ button.btn.dark {
 		margin-right: 15px;
 	}
 	#search-form {
-		margin: 0;
+		margin: 10px 0 0 0;
+		overflow: hidden;
 		#search {
 			display: block;
 			width: 100% !important;
@@ -683,7 +685,7 @@ button.btn.dark {
 		padding: 0;
 	}
 	.heading {
-		margin-top: 20px;
+		margin-top: 0;
 		padding: 0 10px;	
 	}
 	.recipe:first-child{
@@ -694,7 +696,7 @@ button.btn.dark {
 		overflow: hidden;
 		margin: 10px 0;
 		width: 100%;
-		padding: 10px;
+		padding: 10px 15px;
 		@include border-radius(10px);
 		h1 {
 			font-size: 0.8em;
@@ -712,68 +714,74 @@ button.btn.dark {
 		}
 		i {
 			color: $white;
+			margin: 0 1px;
 			&:hover {
 				color: $lightOrange;
 			}
 		}
 		.top-heading {
 			padding-bottom: 15px;
+			cursor: pointer;
 		}
 		.bottom-info {
 			background: $white;
 			overflow: hidden;
-			padding: 10px 0;
-			margin: 10px;
+			padding: 15px 10px 10px 10px;
+			margin: 10px 0;
+			@include border-radius(10px);
+			blockquote {
+				color: $grey;
+			}
+			.view-comments {
+				font-size: 0.9em;
+			}
+			.edit-recipe {
+				font-size: 0.9em;
+			}
+			a.inline {
+				background: lighten($grey, 40%);
+				color: $white;
+				font-weight: normal;
+				text-align: center;
+				font-size: 0.8em;
+				letter-spacing: 0.2em;
+				@include border-radius(5px);
+				float: none;
+				display: inline-block;
+				padding: 5px 10px;
+				margin: 0 0 0 10px;
+				&:hover {
+					color: $white;
+					background: lighten($grey, 30%);
+				}
+				&:hover i {
+					color: $white;
+				}
+				i {
+					color: $white;
+					&:hover {
+						color: $white !important;
+					}
+				}
+			}
 			a {
 				color: $grey;
 				float: right;
 				padding-top: 5px;
-				padding-right: 10px;
+				padding-right: 0;
 				&:hover i, &:hover {
-					color: $lightOrange;
+					color: darken($grey, 10%);
 				}
 			}
 			i {
 				color: $grey;
-				&:hover {
-					color: $lightOrange;
-				}
 			}
-		}
-		.recipe-info {
 			p {
-				color: $white;
-			}
-			p.name {
-				font-weight: bold;
-			}
-			button.btn {
-				background: $teal;
-				outline: none;
-				border: none;
-				&:hover,&:focus{
-					background: darken($teal, 5%);
-					outline: none;
-					border: none;
-				}
-			}
-			.show {
-					display: block !important;
-				}
-				i {
-					margin-left: 15px;
-					color: $white;
-				}
-			.directions {
-				display: none;
-				height: auto;
-				padding: 10px;
-				background: $lightOrange;
-				width: 100%;
-				@include border-radius(10px);
-				@include border-radius(10px);
-				p {
-					
+				font-size: 0.9em;
+				span {
+					font-size: 0.9em;
+					font-weight: bold;
+					color: $teal;
 				}
 			}
 		}
@@ -814,6 +822,7 @@ button.btn.dark {
 		}
 		input, textarea, select {
 			padding: 5px 0 0 5px;
+			border: 2px solid $lightTeal;
 			margin: 10px 0 15px 0;
 		}
 	}
