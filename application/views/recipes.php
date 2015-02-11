@@ -63,35 +63,39 @@
 								</div>
 								<hr>
 							</div>
-						<?php if($image){
-								echo '<div class="row">';
-									echo '<div class="small-12 medium-4 left columns">';
-										echo '<img src="' . site_url('assets/uploads/'. $image) . '" alt="" />';
+								<?php if($image){
+									echo '<div class="row">';
+										echo '<div class="small-12 medium-4 left columns">';
+											echo '<img src="' . site_url('assets/uploads/'. $image) . '" alt="" />';
+											if($this->session->userdata('email') === 'theller5567@gmail.com'){
+												echo '<button class="delete"><a href="' . site_url('uploadimage/delete_recipe/')."/".$recipe_id . '">Delete Recipe <i class="fi-trash"></i></a></button>';
+											}
+											echo '<button class="delete"><a href="' . site_url('comments/show_comment_id/')."/".$recipe_id . '">Comments <i class="fi-comments"></i></a></button>';
+											echo '<button class="delete"><a href="' . site_url('addRecipe/show_recipe_id/')."/".$recipe_id . '">Edit <i class="fi-pencil"></i></a></button>';
+										echo '</div>';
+										echo '<div class="small-12 medium-8 right columns">';
+											echo '<p class="directions"><span>Directions: </span>' . $recipe_directions . '</p>';
+										echo '</div>';
 									echo '</div>';
-									echo '<div class="small-12 medium-8 right columns">';
-										echo '<p class="directions"><span>Directions: </span>' . $recipe_directions . '</p>';
+								}else{
+									echo '<div class="row">';
+										echo '<div class="small-12 medium-4 columns">';
+											echo '<p class="lead">Currently thier is no image available, be the first to add an image to this recipe.</p>';
+											if($this->session->userdata('email') === 'theller5567@gmail.com'){
+												echo '<button class="delete"><a href="' . site_url('uploadimage/delete_recipe/')."/".$recipe_id . '">Delete Recipe <i class="fi-trash"></i></a></button>';
+											}
+											echo '<button class="delete"><a href="' . site_url('comments/show_comment_id/')."/".$recipe_id . '">Comments <i class="fi-comments"></i></a></button>';
+											echo '<button class="delete"><a href="' . site_url('addRecipe/show_recipe_id/')."/".$recipe_id . '">Edit <i class="fi-pencil"></i></a></button>';
+										echo '</div>';
+										echo '<div class="small-12 medium-8 columns">';
+											echo '<p class="directions"><span>Directions: </span>' . $recipe_directions . '</p>';
+
+										echo '</div>';
 									echo '</div>';
-								echo '</div>';
-							}else{
-								echo '<div class="row">';
-									echo '<div class="small-12 medium-12 columns">';
-										echo '<p class="lead">Currently thier is no image available, be the first to add an image to this recipe. <a class="inline" href="' . site_url('addRecipe/show_recipe_id/')."/".$recipe_id . '">Edit <i class="fi-pencil"></i></a></p>';
-									echo '</div>';
-									echo '<div class="small-12 medium-12 columns">';
-										echo '<p class="directions"><span>Directions: </span>' . $recipe_directions . '</p>';
-									echo '</div>';
-								echo '</div>';
-								echo '';
-								} ?>
-							<hr>
-							<div class="row">
-								<div class="small-6 columns">
-									<a class="view-comments left" href="<?php echo site_url('comments/show_comment_id/')."/".$recipe_id; ?>">Comments <i class="fi-comments"></i></a>
-								</div>
-								<div class="small-6 columns">
-									<a class="edit-recipe" href="<?php echo site_url('addRecipe/show_recipe_id/')."/".$recipe_id; ?>">Edit <i class="fi-pencil"></i></a>
-								</div>
-							</div>
+									echo '';
+									} 
+								?>
+								<hr>
 						</div><!-- END OF BOTTOM-INFO -->
 					</div><!-- END OF RECIPE -->
 				<?php endforeach; ?>

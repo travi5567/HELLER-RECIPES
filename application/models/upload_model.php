@@ -25,10 +25,21 @@ Class upload_model extends CI_Model {
         return $query->row_array();
     }
 
+    function row_delete($id) {    
+      $this->db->where('id', $id);   
+      $this->db->delete('recipes');
+    }
+
+
     function update_recipe_form($id, $data){
         $this->db->where('id', $id);
         $this->db->update('recipes', $data);
         return true;
     }
 
+    function delete_recipe_form($id, $data){
+        $this->db->where('id', $id);
+        $this->db->delete('recipes', $data);
+        return true;
+    }
 }

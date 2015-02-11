@@ -1,13 +1,17 @@
 <div class="add-recipe-container">
 	<div class="row">
+
 		<div class="small-12 column">
 			<?php   
 		    		$attributes = array('id' => 'add-recipe-form');
 		    		echo form_open('addRecipe/create', $attributes);
 				 	echo "<h1>Add New Recipe</h1>";
+				 		echo $error;
+				 	echo validation_errors('<p class="error">', '</p>');
 					echo form_label('Title:', 'recipe_name');
 					echo form_input('recipe_name');
 
+				
 					echo form_label('Recipe Description:', 'recipe_description');
 					echo form_input('recipe_description');
 

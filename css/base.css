@@ -167,7 +167,8 @@ button.btn.dark {
   position: fixed;
   bottom: 0;
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  z-index: 100; }
   #bottom-nav .columns {
     padding: 0;
     margin: 0;
@@ -210,6 +211,8 @@ button.btn.dark {
   margin-left: 15%;
   overflow: hidden;
   padding: 100px 0;
+  position: relative;
+  z-index: 1;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -341,6 +344,8 @@ button.btn.dark {
   padding-bottom: 100px;
   margin-left: 15%;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -419,6 +424,8 @@ button.btn.dark {
   -o-border-radius: 15px;
   border-radius: 15px;
   text-align: center;
+  position: relative;
+  z-index: 1;
   color: #363c3f; }
   .view_users-container ul li {
     text-align: left; }
@@ -440,6 +447,8 @@ button.btn.dark {
   overflow: hidden;
   padding-top: 100px;
   padding-bottom: 100px;
+  position: relative;
+  z-index: 1;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -478,11 +487,42 @@ button.btn.dark {
     color: #ffffff;
     text-align: left; }
 
+.form-error-container {
+  margin: 100px 10% 0 10%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 80%;
+  background: #004d4d;
+  color: #ffffff; }
+  .form-error-container h1 {
+    font-size: 1.5em;
+    color: #ffffff; }
+  .form-error-container h2 {
+    font-size: 1.2em;
+    color: #00b3b3; }
+  .form-error-container p {
+    font-size: 0.9em;
+    margin: 0;
+    padding: 5px 10px;
+    color: #ffffff; }
+  .form-error-container button.button.btn {
+    margin-top: 20px;
+    background: #00b3b3; }
+
 .add-recipe-container #add-recipe-form, .add-recipe-container #upload-image-form, .upload-image-container #add-recipe-form, .upload-image-container #upload-image-form {
   margin: 50px 0;
   padding: 50px 0; }
   .add-recipe-container #add-recipe-form h1, .add-recipe-container #upload-image-form h1, .upload-image-container #add-recipe-form h1, .upload-image-container #upload-image-form h1 {
     color: #ffffff; }
+  .add-recipe-container #add-recipe-form p.error, .add-recipe-container #upload-image-form p.error, .upload-image-container #add-recipe-form p.error, .upload-image-container #upload-image-form p.error {
+    font-size: 0.8em;
+    color: red;
+    margin: 0;
+    padding: 0; }
   .add-recipe-container #add-recipe-form input, .add-recipe-container #add-recipe-form textarea, .add-recipe-container #add-recipe-form select, .add-recipe-container #upload-image-form input, .add-recipe-container #upload-image-form textarea, .add-recipe-container #upload-image-form select, .upload-image-container #add-recipe-form input, .upload-image-container #add-recipe-form textarea, .upload-image-container #add-recipe-form select, .upload-image-container #upload-image-form input, .upload-image-container #upload-image-form textarea, .upload-image-container #upload-image-form select {
     border: 2px solid #00b3b3; }
   .add-recipe-container #add-recipe-form input[type="file"], .add-recipe-container #upload-image-form input[type="file"], .upload-image-container #add-recipe-form input[type="file"], .upload-image-container #upload-image-form input[type="file"] {
@@ -516,6 +556,9 @@ button.btn.dark {
   padding-bottom: 100px; }
   .recipes-container .recipes, .update-recipes-container .recipes {
     margin: 20px 0 100px 0; }
+  .recipes-container form#update-recipe-form, .update-recipes-container form#update-recipe-form {
+    overflow: hidden;
+    margin-bottom: 100px; }
   .recipes-container .form, .update-recipes-container .form {
     margin-bottom: 100px; }
   .recipes-container .filter p, .update-recipes-container .filter p {
@@ -652,7 +695,8 @@ button.btn.dark {
         color: #ffa568; }
     .recipes-container .recipe i, .update-recipes-container .recipe i {
       color: #ffffff;
-      margin: 0 1px; }
+      margin: 0 1px;
+      font-size: 0.8em; }
       .recipes-container .recipe i:hover, .update-recipes-container .recipe i:hover {
         color: #ffa568; }
     .recipes-container .recipe .top-heading, .update-recipes-container .recipe .top-heading {
@@ -674,6 +718,23 @@ button.btn.dark {
         font-size: 0.9em; }
       .recipes-container .recipe .bottom-info .edit-recipe, .update-recipes-container .recipe .bottom-info .edit-recipe {
         font-size: 0.9em; }
+      .recipes-container .recipe .bottom-info .delete, .update-recipes-container .recipe .bottom-info .delete {
+        width: 100%;
+        margin: 10px 0;
+        padding: 0.8rem 1.5rem 1rem 1.5rem; }
+        .recipes-container .recipe .bottom-info .delete a, .update-recipes-container .recipe .bottom-info .delete a {
+          color: #ffffff;
+          margin: 0;
+          padding: 0;
+          float: left;
+          font-size: 0.8em; }
+          .recipes-container .recipe .bottom-info .delete a:hover, .update-recipes-container .recipe .bottom-info .delete a:hover {
+            color: #ffffff; }
+          .recipes-container .recipe .bottom-info .delete a i, .update-recipes-container .recipe .bottom-info .delete a i {
+            color: #ffffff;
+            font-size: 1em; }
+            .recipes-container .recipe .bottom-info .delete a i:hover, .update-recipes-container .recipe .bottom-info .delete a i:hover {
+              color: #ffffff; }
       .recipes-container .recipe .bottom-info a.inline, .update-recipes-container .recipe .bottom-info a.inline {
         background: #99a3a8;
         color: #ffffff;
@@ -704,8 +765,6 @@ button.btn.dark {
         float: right;
         padding-top: 5px;
         padding-right: 0; }
-        .recipes-container .recipe .bottom-info a:hover i, .recipes-container .recipe .bottom-info a:hover, .update-recipes-container .recipe .bottom-info a:hover i, .update-recipes-container .recipe .bottom-info a:hover {
-          color: #1e2224; }
       .recipes-container .recipe .bottom-info i, .update-recipes-container .recipe .bottom-info i {
         color: #363c3f; }
       .recipes-container .recipe .bottom-info p, .update-recipes-container .recipe .bottom-info p {

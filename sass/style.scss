@@ -158,6 +158,7 @@ button.btn.dark {
 	bottom: 0;
 	width: 100%;
 	margin: 0;
+	z-index: 100;
 	.columns {
 		padding: 0;
 		margin: 0;
@@ -212,6 +213,8 @@ button.btn.dark {
 	margin-left: 15%;
 	overflow: hidden;
 	padding: 100px 0;
+	position: relative;
+	z-index: 1;
 	@include border-radius(15px); 
 	text-align: center;
 	color: $white;
@@ -363,6 +366,8 @@ button.btn.dark {
 	padding-bottom: 100px;
 	margin-left: 15%;
 	overflow: hidden;
+	position: relative;
+	z-index: 1;
 	@include border-radius(15px); 
 	color: $grey;
 	.comments {
@@ -450,6 +455,8 @@ button.btn.dark {
 	overflow: hidden;
 	@include border-radius(15px); 
 	text-align: center;
+	position: relative;
+	z-index: 1;
 	color: $grey;
 	ul {
 		li {
@@ -479,6 +486,8 @@ button.btn.dark {
 	overflow: hidden;
 	padding-top: 100px;
 	padding-bottom: 100px;
+	position: relative;
+	z-index: 1;
 	@include border-radius(15px); 
 	text-align: center;
 	color: $grey;
@@ -521,6 +530,33 @@ button.btn.dark {
 	}	
 }
 
+.form-error-container {
+	margin: 100px 10% 0 10%;
+	@include border-radius(10px);
+	padding: 10px 20px;
+	width: 80%;
+	background: $teal;
+	color: $white;
+	h1 {
+		font-size: 1.5em;
+		color: $white;
+	}
+	h2 {
+		font-size: 1.2em;
+		color: $lightTeal;
+	}
+	p {
+		font-size: 0.9em;
+		margin: 0;
+		padding: 5px 10px;
+		color: $white;
+	}
+	button.button.btn {
+		margin-top: 20px;
+		background: $lightTeal;
+	}
+}
+
 //ADD RECIPE FROM PAGE
 .add-recipe-container, .upload-image-container {
 	#add-recipe-form, #upload-image-form {
@@ -528,6 +564,12 @@ button.btn.dark {
 		padding: 50px 0;
 		h1 {
 			color: $white;
+		}
+		p.error {
+			font-size: 0.8em;
+			color: red;
+			margin: 0;
+			padding: 0;
 		}
 		input, textarea, select {
 			border: 2px solid $lightTeal;
@@ -575,6 +617,10 @@ button.btn.dark {
 	padding-bottom: 100px;
 	.recipes {
 		margin: 20px 0 100px 0;
+	}
+	form#update-recipe-form {
+		overflow: hidden;
+		margin-bottom: 100px;
 	}
 	.form {
 		margin-bottom: 100px;
@@ -715,6 +761,7 @@ button.btn.dark {
 		i {
 			color: $white;
 			margin: 0 1px;
+			font-size: 0.8em;
 			&:hover {
 				color: $lightOrange;
 			}
@@ -737,6 +784,28 @@ button.btn.dark {
 			}
 			.edit-recipe {
 				font-size: 0.9em;
+			}
+			.delete {
+				width: 100%;
+				margin: 10px 0;
+				padding: 0.8rem 1.5rem 1rem 1.5rem;
+				a {
+					color: $white;
+					margin: 0;
+					padding: 0;
+					float: left;
+					font-size: 0.8em;
+					&:hover {
+						color: $white;
+					}
+					i {
+						color: $white;
+						font-size: 1em;
+						&:hover {
+							color: $white;
+						}
+					}
+				}
 			}
 			a.inline {
 				background: lighten($grey, 40%);
@@ -769,9 +838,6 @@ button.btn.dark {
 				float: right;
 				padding-top: 5px;
 				padding-right: 0;
-				&:hover i, &:hover {
-					color: darken($grey, 10%);
-				}
 			}
 			i {
 				color: $grey;

@@ -14,8 +14,8 @@ class Addrecipe extends CI_Controller {
 		} else {
 			redirect('login/restricted');
 		}
-		
 	}
+
 	function search(){
 		if($this->session->userdata('is_logged_in')){
 			$this->load->model('model_search');
@@ -124,20 +124,31 @@ class Addrecipe extends CI_Controller {
 	}
 
 	public function create(){
-		$data = array(
-			'id'  => $this->input->post('recipe_id'),
-            'title' => strtolower($this->input->post('recipe_name')),
-            'description' => $this->input->post('recipe_description'),
-            'stars' => $this->input->post('rating'),
-            'directions' => $this->input->post('recipe_directions'),
-            'link' => $this->input->post('recipe_link'),
-            'image' => $this->input->post('userfile'),
-            'genre' => $this->input->post('recipe_genre'),
-            'posted' =>  date('Y-m-d')
-		);
-		$this->do_upload($data);
-		$this->recipe_model->add_recipe($data);
-		$this->recipes();
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('title','Title', 'required');
+		$this->form_validation->set_rules('description','Description', 'required');
+		$this->form_validation->set_rules('stars','Rating', 'required');
+		$this->form_validation->set_rules('description','Description', 'required');
+		$this->form_validation->set_rules('genre','Genre', 'required');
+		$this->form_validation->set_rules('description','Description', 'required');
+		if(!$this->form_validation->run()){
+			$this->index();
+		}else{
+			$data = array(
+				'id'  => $this->input->post('recipe_id'),
+	            'title' => strtolower($this->input->post('recipe_name')),
+	            'description' => $this->input->post('recipe_description'),
+	            'stars' => $this->input->post('rating'),
+	            'directions' => $this->input->post('recipe_directions'),
+	            'image' => $this->input->post('userfile'),
+	            'genre' => $this->input->post('recipe_genre'),
+	            'posted' =>  date('Y-m-d')
+			);
+			$this->do_upload($data);
+			$this->recipe_model->add_recipe($data);
+			$this->recipes();
+		}
+		
 	}
 
 	public function update(){

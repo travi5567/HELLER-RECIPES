@@ -5,6 +5,13 @@
 				$attributes = array('id' => 'upload-image-form');
 				echo form_open_multipart('uploadimage/do_upload', $attributes);
 					echo "<h1>Add New Recipe</h1>";
+					    if(@$error){
+							echo $error;
+						}else{
+							$error = '';
+							echo $error;
+						}
+				 	echo validation_errors('<p class="error">', '</p>');
 					echo form_label('Title:', 'recipe_name');
 					echo form_input('recipe_name');
 
@@ -42,6 +49,7 @@
 
 					echo form_label('Upload Recipe Image:', 'userfile');
 					echo form_upload('userfile');
+
 
 					$data = array(
 					      'name'        => 'add_recipe',

@@ -6,9 +6,8 @@
 	</div>
 	<div class="row">
 		<div class="small-12 column">
-			<div class="recipes">
-				<?php foreach($recipes as $row) : ?>
-					<?php 
+				<?php 
+					foreach($recipes as $row){
 						$recipe_title =  $row->title;
 						$recipe_id =  $row->id;
 					    $recipe_description =  $row->description; 
@@ -17,30 +16,7 @@
 					    $posted =  $row->posted; 
 					    $rating =  $row->stars;
 					    $image =  $row->image; 
-					?>
-				<?php endforeach; ?>
-				<div class="recipe">
-						<div class="row top-heading">
-							<div class="small-9 columns">
-								<h1><?php echo $recipe_title; ?></h1>
-							</div>
-							<div class="small-3 columns">
-								<h1><?php if($rating > 0){echo $rating . '<i class="fi fi-star"></i>';}else{echo '<i class="fi fi-skull"></i>';} ?></h1>
-							</div>
-						</div>
-						<div class="row bottom-info">
-							<div class="small-8 columns">
-								<p class="description"><?php echo $recipe_description; ?></p>
-								<p class="directions"><?php echo $recipe_directions; ?></p>
-							</div>
-							<div class="small-4 columns">
-								<img src="<?php echo site_url('assets/uploads/'. $image);?>" alt="" />
-							</div>
-						</div>
-				</div>
-			</div>
-			<div class="form">
-				<?php 
+					}
 					$attributes = array('id' => 'update-recipe-form');
 			 		echo form_open_multipart('uploadimage/update_recipe/'.$recipe_id.'', $attributes);
 					$data = array(
@@ -84,7 +60,11 @@
 					echo form_dropdown('recipe_genre', $genre_options, $selected);
 
 					echo form_label('Upload Recipe Image:', 'userfile');
-					echo form_upload('userfile');
+					$valueArray = array(
+						'name' => 'userfile',
+						'value' => $image
+					);
+					echo form_upload($valueArray);
 
 					$data = array(
 					      'name'        => 'recipe_update',
