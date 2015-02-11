@@ -727,7 +727,9 @@ button.btn.dark {
           margin: 0;
           padding: 0;
           float: left;
-          font-size: 0.8em; }
+          font-size: 0.8em;
+          width: 100%;
+          display: block; }
           .recipes-container .recipe .bottom-info .delete a:hover, .update-recipes-container .recipe .bottom-info .delete a:hover {
             color: #ffffff; }
           .recipes-container .recipe .bottom-info .delete a i, .update-recipes-container .recipe .bottom-info .delete a i {

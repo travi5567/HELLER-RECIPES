@@ -795,6 +795,8 @@ button.btn.dark {
 					padding: 0;
 					float: left;
 					font-size: 0.8em;
+					width: 100%;
+					display: block;
 					&:hover {
 						color: $white;
 					}
