@@ -7,7 +7,7 @@
 
 		}else{
 			echo "<h1>SIGN IN</h1>";
-			 echo validation_errors();
+			 echo validation_errors('<p class="error">', '</p>');
 				$attributes = array('id' => 'sign-in-form');
 				echo form_open('login/login_validation', $attributes);
 				

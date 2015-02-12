@@ -5,6 +5,7 @@ $orange: #f38c4b;
 $lightOrange: #ffa568;
 $grey: #363c3f;
 $white: #ffffff;
+$error: #900503 !important;
 
 $base__font-size: 1em;
 //ZURB DEFAULT VARIABLES
@@ -24,9 +25,6 @@ $base__font-size: 1em;
 @import '_color-map.scss';
 @import '_color-generator.scss';
 @import 'mixins.scss';
-
-
-
 @import 'fonts.scss';
 @import 'style.scss';
 @import 'mq.scss';

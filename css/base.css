@@ -29,7 +29,8 @@
 body, html {
   background: #00b3b3;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 .bgOverlay {
   position: fixed;
@@ -74,6 +75,9 @@ blockquote {
 
 h1 {
   font-weight: bold; }
+
+p.error {
+  color: #900503 !important; }
 
 .lead {
   font-weight: bold;
@@ -217,11 +221,16 @@ button.btn.dark {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-  border-radius: 15px;
-  text-align: center;
-  color: #ffffff; }
+  border-radius: 15px; }
+  .sign-in-container h1, .sign-up-container h1 {
+    text-align: center;
+    color: #ffffff; }
+  .sign-in-container p, .sign-up-container p {
+    color: #004d4d;
+    font-weight: bold;
+    margin: 0 0 0 15px; }
   .sign-in-container a, .sign-up-container a {
-    color: #363c3f;
+    color: #004d4d;
     text-decoration: underline;
     display: block;
     width: 60%;
@@ -272,7 +281,7 @@ button.btn.dark {
     margin: 20px 0; }
   .sign-in-container form#sign-in-form, .sign-in-container form#sign-up-form, .sign-in-container form#create-account-form, .sign-up-container form#sign-in-form, .sign-up-container form#sign-up-form, .sign-up-container form#create-account-form {
     width: 60%;
-    margin-left: 20%; }
+    margin: 0 0 0 20%; }
     .sign-in-container form#sign-in-form p, .sign-in-container form#sign-up-form p, .sign-in-container form#create-account-form p, .sign-up-container form#sign-in-form p, .sign-up-container form#sign-up-form p, .sign-up-container form#create-account-form p {
       margin: 5px; }
       .sign-in-container form#sign-in-form p label, .sign-in-container form#sign-up-form p label, .sign-in-container form#create-account-form p label, .sign-up-container form#sign-in-form p label, .sign-up-container form#sign-up-form p label, .sign-up-container form#create-account-form p label {
@@ -487,7 +496,7 @@ button.btn.dark {
     color: #ffffff;
     text-align: left; }
 
-.form-error-container {
+.form-error-container, .form-success-container {
   margin: 100px 10% 0 10%;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -496,20 +505,20 @@ button.btn.dark {
   border-radius: 10px;
   padding: 10px 20px;
   width: 80%;
-  background: #004d4d;
-  color: #ffffff; }
-  .form-error-container h1 {
+  background: #ffffff;
+  color: #004d4d; }
+  .form-error-container h1, .form-success-container h1 {
     font-size: 1.5em;
-    color: #ffffff; }
-  .form-error-container h2 {
+    color: #004d4d; }
+  .form-error-container h2, .form-success-container h2 {
     font-size: 1.2em;
-    color: #00b3b3; }
-  .form-error-container p {
+    color: #363c3f; }
+  .form-error-container p, .form-success-container p {
     font-size: 0.9em;
     margin: 0;
     padding: 5px 10px;
-    color: #ffffff; }
-  .form-error-container button.button.btn {
+    color: #363c3f; }
+  .form-error-container button.button.btn, .form-success-container button.button.btn {
     margin-top: 20px;
     background: #00b3b3; }
 

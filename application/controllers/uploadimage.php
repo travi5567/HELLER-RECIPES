@@ -2,7 +2,7 @@
 
 class Uploadimage extends CI_Controller {
 	
-	public function do_upload(){
+	function do_upload(){
 		$this->load->model('upload_model');
 	    $config['upload_path'] = './assets/uploads/';
 	    $config['allowed_types'] = 'gif|jpg|jpeg|png';
@@ -50,7 +50,7 @@ class Uploadimage extends CI_Controller {
 		}
 	}
 
-	public function view_image(){
+	function view_image(){
 		$data['user_info'] = $this->model_users->view_user('users')->result();
 		$this->load->view('includes/header');
 		$this->load->view('includes/navigation-header', $data);
@@ -94,7 +94,7 @@ class Uploadimage extends CI_Controller {
 		      	'imagePath' => $image_data['full_path']
 		    );
 		    $this->upload_model->update_recipe_form($id, $data);
-		    redirect('addRecipe/recipes');
+		    redirect('login/success');
 	 	}else{//NO FILE || BAD FILE
 			$image_data = $this->upload->data();
 	 		if($image_data['file_name']){
@@ -120,20 +120,9 @@ class Uploadimage extends CI_Controller {
 			        'posted' =>  date('Y-m-d')
 			    );
 			    $this->upload_model->update_recipe_form($id, $data);
-			    redirect('addRecipe/recipes');
+			    redirect('login/success');
 			}
 	 	}
-	 	
-	    
-	    
-	    
-	    if($image_data['file_name']){
-			echo "GOOD-second";
-		}else{
-			echo "bad-second";
-		}
-	    
-	    
 	}
 
 

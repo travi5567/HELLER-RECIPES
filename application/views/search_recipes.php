@@ -17,6 +17,7 @@
 	<div class="row">
 		<div class="small-12 column">
 			<div class="recipes">
+				<p><?php echo 'Results found for '.$searchKey; ?></p>
 				<?php foreach($query as $row) : ?>
 					<?php 
 						$recipe_title =  $row->title;

@@ -18,6 +18,7 @@ class Addrecipe extends CI_Controller {
 
 	function search(){
 		if($this->session->userdata('is_logged_in')){
+			$data['searchKey'] = $this->input->post('search');
 			$this->load->model('model_search');
 			$data['user_info'] = $this->model_users->view_user('users')->result();	
 			$data['query'] = $this->model_search->get_search();
@@ -28,6 +29,7 @@ class Addrecipe extends CI_Controller {
 				$this->load->view('includes/bottom-nav');
 				$this->load->view('includes/footer');
 			}else{
+				$data['searchKey'] = $this->input->post('search');
 				$data['message'] = "No results found with search";
 				$this->load->view('includes/header');
 				$this->load->view('includes/navigation-header', $data);

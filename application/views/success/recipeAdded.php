@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Heller - Recipes</title>
+	<title>Heller - Recipes/ Recipe Succesfully Added</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
  	<script src="<?php echo base_url(); ?>assets/js/jqModal.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/jqModal.css">
@@ -11,12 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/base.css">
 </head>
 <body>
-<div class="form-error-container">
-	<h1>Something went wrong with form submission</h1>
-	<h2>Please fix the following for your order to be submited succesfull.</h2>
-	<?php echo validation_errors('<p class="error">- ', '</p>'); ?>
-	<?php echo $error;  ?>
-	<button class="button btn"><a href="<?php echo site_url('uploadimage/view_image'); ?>">Return to Form</a></button>
+<div class="form-success-container">
+	<h1>Recipe Succesfully Added</h1>
+	<button class="button btn"><a href="<?php echo site_url('uploadimage/view_image'); ?>">Go Back to Recipes</a></button>
 
 </div>
 

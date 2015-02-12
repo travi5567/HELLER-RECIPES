@@ -24,6 +24,15 @@ class Login extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 
+	public function success(){
+		$userdata['user_info'] = $this->model_users->view_user('users')->result();
+		$this->load->view('includes/header');
+		$this->load->view('includes/navigation-header', $userdata);
+		$this->load->view('success/recipeAdded');
+		$this->load->view('includes/bottom-nav');
+		$this->load->view('includes/footer');
+	}
+
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect('login');
@@ -82,7 +91,7 @@ class Login extends CI_Controller {
 	public function signup_validation(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[users.email]');
-		$this->form_validation->set_rules('password','Password', 'required|trim');
+		$this->form_validation->set_rules('password','Password', 'required|trim|min_length[5]|max_length[15]');
 		$this->form_validation->set_rules('cpassword','Confirm Password', 'required|trim|matches[password]');
 		$this->form_validation->set_message('is_unique', 'That email address already exist.');
 		if($this->form_validation->run()){
