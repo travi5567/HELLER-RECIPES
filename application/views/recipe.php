@@ -52,7 +52,7 @@
 										echo '<div class="small-12 medium-4 left columns">';
 											echo '<img src="' . site_url('assets/uploads/'. $image) . '" alt="" />';
 											if($this->session->userdata('email') === 'theller5567@gmail.com'){
-												echo '<button class="delete"><a href="' . site_url('uploadimage/delete_recipe/')."/".$recipe_id . '">Delete Recipe <i class="fi-trash"></i></a></button>';
+												echo '<button class="delete"><a href="' . site_url('addRecipe/delete_confirm/')."/".$recipe_id . '">Delete Recipe <i class="fi-trash"></i></a></button>';
 											}
 											echo '<button class="delete"><a href="' . site_url('comments/show_comment_id/')."/".$recipe_id . '">Comments <i class="fi-comments"></i></a></button>';
 											echo '<button class="delete"><a href="' . site_url('addRecipe/show_recipe_id/')."/".$recipe_id . '">Edit <i class="fi-pencil"></i></a></button>';
@@ -66,7 +66,7 @@
 										echo '<div class="small-12 medium-4 columns">';
 											echo '<p class="lead">Currently thier is no image available, be the first to add an image to this recipe.</p>';
 											if($this->session->userdata('email') === 'theller5567@gmail.com'){
-												echo '<button class="delete"><a href="' . site_url('uploadimage/delete_recipe/')."/".$recipe_id . '">Delete Recipe <i class="fi-trash"></i></a></button>';
+												echo '<button class="delete"><a href="' . site_url('addRecipe/delete_confirm/')."/".$recipe_id . '">Delete Recipe <i class="fi-trash"></i></a></button>';
 											}
 											echo '<button class="delete"><a href="' . site_url('comments/show_comment_id/')."/".$recipe_id . '">Comments <i class="fi-comments"></i></a></button>';
 											echo '<button class="delete"><a href="' . site_url('addRecipe/show_recipe_id/')."/".$recipe_id . '">Edit <i class="fi-pencil"></i></a></button>';

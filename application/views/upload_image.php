@@ -54,7 +54,7 @@
 					$data = array(
 					      'name'        => 'add_recipe',
 					      'value'       => 'Add Recipe',
-					      'class'       => 'button btn'
+					      'class'       => 'button btn left'
 					    );
 					echo form_submit($data);
 				echo form_close(); 
