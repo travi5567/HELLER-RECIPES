@@ -10,7 +10,7 @@
 
 			<button class="btn"><a href="<?php echo site_url('addRecipe/recipes');?>"><i class="fi-book"></i>View Recipes</a></button>
 
-			<button class="btn"><a href="<?php echo site_url('login/view_users');?>"><i class="fi-torsos-all"></i>View Users</a></button>
+			<button class="btn"><a href="<?php echo site_url('users');?>"><i class="fi-torsos-all"></i>View Users</a></button>
 		</div>
 	</div>
 </div>

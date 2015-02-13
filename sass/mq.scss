@@ -8,6 +8,7 @@
                 }
             }    
         }
+
         #navigation-header {
             .logo {
                 a {
@@ -34,6 +35,26 @@
             float: left !important;
             span {
                 float: none;
+            }
+        }
+        .view_users-container, .user-container {
+            width: 94%;
+            margin-left: 3%;
+            h1 {
+                margin: 0;
+                padding: 0;
+            }
+            h2 {
+                font-size: 1em;
+                margin: 0;
+                padding: 0;
+                line-height: 1em;
+            }
+            p {
+                font-size: 0.8em;
+            }
+            i {
+                font-size: 0.5em;
             }
         }
         .sign-in-container{
@@ -97,8 +118,16 @@
             margin-left: 5%;
             overflow: hidden;
         }
+        .goto-btn {
+            a {
+                font-size: 0.6em;
+                i {
+                    margin: 0 0 0 5px;
+                }
+            }
+        }
     }
- } /* Define mobile styles */
+} /* Define mobile styles */
 
 @media only screen and(max-width: 40em) {
     /* Portrait */
@@ -109,6 +138,13 @@
     @media screen and(orientation: landscape) {
         
     }
+    
+    .error-container {
+        h1 {
+            font-size: 1.2em;
+        }
+    }
+
     #navigation-header {
         .logo {
             a {
@@ -123,8 +159,7 @@
             }
         }
     }
-
- } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
 
 // Medium screens
@@ -168,6 +203,7 @@
                 }
             }
         }
+        
     }
     
 } /* min-width 641px, medium screens */
@@ -180,8 +216,26 @@
 // Large screens
 @media only screen and(min-width: 64.063em) {
     body, html {
-        background: $lightTeal !important;
-        height: 100%;
+        .view_users-container, .user-container {
+            width: 90%;
+            margin-left: 5%;
+            h1 {
+                margin: 0;
+                padding: 0;
+            }
+            i {
+                font-size: 0.8em;
+            }
+        }
+        .goto-btn {
+            a {
+                padding: 0.3rem;
+                font-size: 0.8em;
+                i {
+                    margin: 0 0 0 5px;
+                }
+            }
+        }
     }
 } /* min-width 1025px, large screens */
 

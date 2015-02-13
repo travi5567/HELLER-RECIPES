@@ -34,7 +34,6 @@ class Comments extends CI_Controller {
 		}else{
 			redirect('login/restricted');
 		}
-		
 	}
 
 	public function add_comment(){

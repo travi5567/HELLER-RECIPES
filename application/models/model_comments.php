@@ -3,6 +3,7 @@
 Class Model_comments extends CI_Model {
 
 	function get_comments(){
+		$this->db->order_by("rating", "desc"); 
 		$q = $this->db->get('comments');
 		if($q->num_rows() > 0){
 			foreach($q->result() as $row){
@@ -24,6 +25,7 @@ Class Model_comments extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('comments');
 		$this->db->where('recipeId', $data);
+		$this->db->order_by("rating", "desc"); 
 		$query = $this->db->get();
 		$result = $query->result();
 		return $result;
@@ -32,6 +34,7 @@ Class Model_comments extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('recipes');
 		$this->db->where('id', $data);
+		$this->db->order_by("rating", "desc"); 
 		$query = $this->db->get();
 		$result = $query->result();
 		return $result;

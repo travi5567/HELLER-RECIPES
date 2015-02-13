@@ -1,15 +1,14 @@
 html {
 }
-body, html {
+body {
 	background: $lightTeal;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
 }
 .bgOverlay {
 	position: fixed;
-	width: 100%;
-	height: 100%;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+ 	min-height: 100%;
 	z-index: 0;
 	background: url(../assets/images/white_tiles_@2X.png) repeat;
 	@include opacity(0.3);
@@ -19,7 +18,7 @@ body, html {
 }
 a {
 	font-weight: bold;
-	color: $orange;
+	color: $white;
 }
 .noPadding {
 	padding: 0 !important;
@@ -48,7 +47,11 @@ blockquote {
 	border: none;
 }
 h1 {
+	font-size: 2em;
+}
+h2 {
 	font-weight: bold;
+	font-size: 1.5em;
 }
 p.error {
 	color: $error;
@@ -82,6 +85,8 @@ button.btn.dark {
 	background: $grey;
 	outline: none;
 	border: none;
+	margin: 0 auto;
+	display: block;
 	a {
 		color: $white;
 		padding: 0;
@@ -93,6 +98,63 @@ button.btn.dark {
 		background: darken($grey, 5%) !important;
 		outline: none;
 		border: none;
+	}
+}
+
+.back-btn, .goto-btn {
+	background: $grey;
+	font-size: 1em;
+	text-align: center;
+	padding: 5px;
+	margin-left: 10px;
+	@include border-radius(0);
+	&:hover {
+		background: lighten($grey, 2%);
+	}
+	a {
+		background: $grey;
+		color: $white;
+		display: inline-block;
+		width: 100%;
+		padding: 10px;
+		line-height: 100%;
+		font-weight: normal;
+		font-size: 0.8em;
+		i {
+			margin-top: 0;
+			margin-right: 10px;
+			font-size: 1em;
+		}
+	}
+}
+i {
+	margin-right: 15px;
+}
+
+.goto-btn {
+	position: absolute;
+	bottom: -35px;
+	right: -10px;
+	margin: 0;
+	float: right;
+	a {
+		padding: 0.3rem;
+		color: $white;
+		font-weight: light;
+		font-size: 0.8em;
+		i {
+			margin: 0 0 0 5px;
+		}
+	}
+	.corner-graphic {
+		position: absolute;
+		top: -10px;
+		right: 0;
+		width: 0; 
+		height: 0; 
+		border-top: 10px solid transparent;
+		border-bottom: 0 solid transparent;
+		border-left: 15px solid darken($grey, 10%);
 	}
 }
 
@@ -208,6 +270,38 @@ button.btn.dark {
 	}
 	.inactive-btn {
 		color: darken($grey, 5%) !important;
+	}
+}
+
+.user-container {
+	width: 70%;
+	margin-left: 15%;
+	overflow: hidden;
+	padding: 100px 0;
+	position: relative;
+	z-index: 1;
+	color: $grey;
+	.comment-container {
+		position: relative;
+		@include border-radius(15px);
+		padding: 10px 10px 50px 10px;
+		margin: 10px 0;
+		background: $white;
+		.cmnt-header {
+			float: none;
+			display: block;
+			overflow: hidden;
+			h2 {
+				float: left;
+			}
+			.rating {
+				float: right;
+			}
+		}
+		.recipe-comment {
+			margin: 10px 0;
+		}
+		
 	}
 }
 
@@ -372,10 +466,8 @@ button.btn.dark {
 
 //VIEW Recipe Comments PAGE
 .view_comments-container{
-	width: 70%;
-	margin-top: 100px;
-	padding-bottom: 100px;
-	margin-left: 15%;
+	width: 90%;
+	margin-left: 5%;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
@@ -461,13 +553,12 @@ button.btn.dark {
 //VIEW USERS PAGE
 .view_users-container {
 	width: 70%;
-	margin-top: 100px;
+	padding: 100px 0;
 	margin-left: 15%;
 	overflow: hidden;
-	@include border-radius(15px); 
-	text-align: center;
 	position: relative;
-	z-index: 1;
+	z-index: 12;
+	@include border-radius(10px); 
 	color: $grey;
 	ul {
 		li {
@@ -482,7 +573,10 @@ button.btn.dark {
 		width: 100%;
 		a {
 			color: $white;
-			text-align: left;	
+			text-align: center;
+			display: block;
+			width: 100;
+			height: 100%;
 		}
 		i {
 			margin-right: 10px;
@@ -495,6 +589,35 @@ button.btn.dark {
 	width: 70%;
 	margin-left: 15%;
 	overflow: hidden;
+	padding: 100px 0;
+	position: relative;
+	z-index: 1;
+	@include border-radius(15px); 
+	text-align: center;
+	color: $grey;
+	button.btn {
+		background: $teal;
+		display: block;
+		float: none;
+		padding: 0;
+		width: 100%;
+		a {
+			color: $white;
+			padding: 10px 15px;
+			text-align: left;
+			width: 100%;
+			display: block;
+		}
+	}
+	i {
+		margin-right: 10px;
+	}
+}
+
+.error-container {
+	width: 70%;
+	margin-left: 15%;
+	overflow: hidden;
 	padding-top: 100px;
 	padding-bottom: 100px;
 	position: relative;
@@ -502,6 +625,9 @@ button.btn.dark {
 	@include border-radius(15px); 
 	text-align: center;
 	color: $grey;
+	h1 {
+		font-size: 2em;
+	}
 	button.btn {
 		background: $teal;
 		display: block;
@@ -542,14 +668,15 @@ button.btn.dark {
 }
 
 .form-error-container, .form-success-container {
-	margin: 100px 10% 0 10%;
+	margin: 100px 20% 0;
 	@include border-radius(10px);
 	padding: 10px 20px;
-	width: 80%;
+	width: 60%;
 	background: $white;
 	color: $teal;
 	h1 {
 		font-size: 1.5em;
+		text-align: center;
 		color: $teal;
 	}
 	h2 {
@@ -621,11 +748,10 @@ button.btn.dark {
 }
 
 //LIST OF ALL RECIPES PAGE
-.recipes-container, .update-recipes-container {
+.recipes-container, .update-recipes-container, .recipe-container {
 	background: $lightTeal;
 	height: 100%;
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding: 70px 0;
 	.recipes {
 		margin: 20px 0 100px 0;
 	}
@@ -636,35 +762,25 @@ button.btn.dark {
 	.form {
 		margin-bottom: 100px;
 	}
-	.filter {
-		p {
-			font-weight: bold;
-			color: $teal;
-			span {
-				background: $lightOrange;
-				padding: 5px 10px;
-				cursor: pointer;
-				color: $teal;
-			}
-		}
-	}
 	.back-btn {
-		background: $teal;
-		width: 96%;
-		@include border-radius(10px);
+		background: $grey;
 		font-size: 1em;
-		text-align: left;
-		padding: 10px;
+		text-align: center;
+		padding: 5px;
 		margin-left: 10px;
+		@include border-radius(0);
 		&:hover {
-			background: lighten($teal, 2%);
+			background: lighten($grey, 2%);
 		}
 		a {
+			background: $grey;
 			color: $white;
 			display: inline-block;
 			width: 100%;
 			padding: 10px;
 			line-height: 100%;
+			font-weight: normal;
+			font-size: 0.8em;
 			i {
 				margin-top: 0;
 				margin-right: 10px;
@@ -691,7 +807,7 @@ button.btn.dark {
 			color: $white;
 			cursor: pointer;
 			padding: 10px;
-		    @include border-radius(10px);
+		    @include border-radius(0);
 			margin-top: 0;
 			font-size: 1em;
 			margin-right: 5px;
@@ -884,6 +1000,146 @@ button.btn.dark {
 			}
 		}
 	}	
+}
+
+.recipe-container {
+	.recipe {
+		background: $teal;
+		overflow: hidden;
+		margin: 10px 0;
+		width: 100%;
+		padding: 10px 15px;
+		@include border-radius(10px);
+		h1 {
+			font-size: 0.8em;
+			text-transform: uppercase;
+			color: $white;
+		}
+		a {
+			color: $white;
+			float: right;
+			padding-top: 5px;
+			padding-right: 10px;
+			&:hover i, &:hover {
+				color: $lightOrange;
+			}
+		}
+		i {
+			color: $white;
+			margin: 0 1px;
+			font-size: 0.8em;
+			&:hover {
+				color: $lightOrange;
+			}
+		}
+		.top-heading {
+			padding-bottom: 15px;
+			cursor: pointer;
+		}
+		.bottom-info {
+			background: $white;
+			overflow: hidden;
+			display: block !important;
+			padding: 15px 10px 10px 10px;
+			margin: 10px 0;
+			@include border-radius(10px);
+			blockquote {
+				color: $grey;
+			}
+			.view-comments {
+				font-size: 0.9em;
+			}
+			.edit-recipe {
+				font-size: 0.9em;
+			}
+			.delete {
+				width: 100%;
+				margin: 10px 0;
+				padding: 0.8rem 1.5rem 1rem 1.5rem;
+				a {
+					color: $white;
+					margin: 0;
+					padding: 0;
+					float: left;
+					font-size: 0.8em;
+					width: 100%;
+					display: block;
+					&:hover {
+						color: $white;
+					}
+					i {
+						color: $white;
+						font-size: 1em;
+						&:hover {
+							color: $white;
+						}
+					}
+				}
+			}
+			a.inline {
+				background: lighten($grey, 40%);
+				color: $white;
+				font-weight: normal;
+				text-align: center;
+				font-size: 0.8em;
+				letter-spacing: 0.2em;
+				@include border-radius(5px);
+				float: none;
+				display: inline-block;
+				padding: 5px 10px;
+				margin: 0 0 0 10px;
+				&:hover {
+					color: $white;
+					background: lighten($grey, 30%);
+				}
+				&:hover i {
+					color: $white;
+				}
+				i {
+					color: $white;
+					&:hover {
+						color: $white !important;
+					}
+				}
+			}
+			a {
+				color: $grey;
+				float: right;
+				padding-top: 5px;
+				padding-right: 0;
+			}
+			i {
+				color: $grey;
+			}
+			p {
+				font-size: 0.9em;
+				span {
+					font-size: 0.9em;
+					font-weight: bold;
+					color: $teal;
+				}
+			}
+		}
+		.header-info {
+			float: right;
+			p.block {
+				background: $lightOrange;
+				padding: 3px 10px;
+				font-size: 0.7em;
+				display: inline-block;
+				i {
+					margin-right: 10px;
+					font-weight: bold;
+					color: $white;
+				}
+			}
+		}
+		.recipe-thumb {
+			img {
+				float: right;
+			}
+		}
+	}
 }
 
 .update-recipes-container {

@@ -1,16 +1,21 @@
 <div class="view_comments-container">
 	<div class="row">
 		<div class="small-12 columns">
+			<?php echo '<button class="btn back-btn"><a href="'.site_url('addRecipe/recipes').'"><i class="fi-arrow-left"></i>Back to Recipes</a></button>'; ?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
 			<div class="comments">
 				
 				<?php 
-					if(!$comments == array()){
-						foreach($recipes as $row){
+					foreach($recipes as $row){
 							$recipe_title =  $row->title;
 							 $recipe_id = $row->id;
-							echo "<h1>Comments</h1>";
-							echo "<h2>".$recipe_title."</h2>";
+							echo "<h1>".ucwords($recipe_title)."</h1>";
 						}
+					if(!$comments == array()){
+						
 						foreach($comments as $row){
 								$comment = $row->comment;
 							    $author = $row->author; 
@@ -33,13 +38,9 @@
 				?>
 				<div class="form add_comment">
 					<div class="row">
-						<div class="small-12 columns">
-							<?php echo '<button class="button btn"><a href="'.site_url('addRecipe/recipes').'"><i class="fi-arrow-left"></i>Back to Recipes</a></button>'; ?>
-						</div>
-					</div>
-					<div class="row">
 						<div class="small-12 column">
 							<?php   
+							 $session_fn = $this->session->userdata('firstname');
 								foreach($recipes as $row){
 									$recipe_title =  $row->title;
 									$recipe_id = $row->id;
@@ -62,7 +63,7 @@
 									$selected = ($this->input->post('rating')) ? $this->input->post('rating') : '1star';                        
 									echo form_dropdown('rating', $rating_options, $selected);
 									echo form_label('Author:', 'author');
-									echo form_input('author');
+									echo "<input type='text' class='hide' name='author' value='".$session_fn."' />";
 								}
 							?>
 							<button class="button" type="submit" name="add_comment">Add Comment</button>

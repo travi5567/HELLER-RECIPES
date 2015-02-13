@@ -10,15 +10,11 @@
 	</div>
 	<div class="row">
 		<div class="small-12 column">
-			<div class="row heading">
-				<div class="small-9 columns">
-					<h1>Title:</h1>
-				</div>
-				<div class="small-3 columns">
-					<h1>Rating:</h1>
-				</div>
-			</div><!-- END OF HEADING -->
-			<?php include('templates/recipes.php'); ?>
+			<div class="recipes">
+				<h2>Their are currently no recipes at this time.</h2>
+				<p>Be the first to add a recipe and click the link below.</p>
+				<button class="button left btn"><a href="<?php echo site_url('uploadimage/view_image'); ?>"><i class="fi-plus"></i>Add Recipe</a></button>
+			</div><!-- END OF RECIPES -->
 		</div>
 	</div>
 </div>

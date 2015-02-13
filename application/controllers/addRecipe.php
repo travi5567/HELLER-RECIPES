@@ -72,15 +72,57 @@ class Addrecipe extends CI_Controller {
 		}
 	}
 
+	public function delete_confirm(){
+		if($this->session->userdata('is_logged_in')){
+			$id = $this->uri->segment(3);
+			$data['recipes'] = $id;
+			$userinfo['user_info'] = $this->model_users->view_user('users')->result();			
+			$this->load->view('includes/header');
+			$this->load->view('includes/navigation-header', $userinfo);
+			$this->load->view('delete_confirm', $data);
+			$this->load->view('includes/bottom-nav');
+			$this->load->view('includes/footer');
+		}else {
+			redirect('login/restricted');
+		}
+	}
+
 	public function recipes(){
 		if($this->session->userdata('is_logged_in')){
 			$id = $this->uri->segment(3);
 			$this->load->model('model_comments');	
 			$data['recipes'] = $this->recipe_model->get_recipes();
+			if($data['recipes']){
+				$data['comments'] = $this->model_comments->show_comment_id($id);
+				$this->load->view('includes/header');
+				$this->load->view('includes/navigation-header', $data);
+				$this->load->view('recipes', $data);
+				$this->load->view('includes/bottom-nav');
+				$this->load->view('includes/footer');
+			}
+			else {
+				$data['comments'] = $this->model_comments->show_comment_id($id);
+				$this->load->view('includes/header');
+				$this->load->view('includes/navigation-header', $data);
+				$this->load->view('no_recipes', $data);
+				$this->load->view('includes/bottom-nav');
+				$this->load->view('includes/footer');
+			}
+			
+		} else {
+			redirect('login/restricted');
+		}
+	}
+
+	public function recipe(){
+		if($this->session->userdata('is_logged_in')){
+			$id = $this->uri->segment(3);
+			$this->load->model('model_comments');	
+			$data['recipes'] = $this->recipe_model-> show_recipe_id($id);
 			$data['comments'] = $this->model_comments->show_comment_id($id);
 			$this->load->view('includes/header');
 			$this->load->view('includes/navigation-header', $data);
-			$this->load->view('recipes', $data);
+			$this->load->view('recipe', $data);
 			$this->load->view('includes/bottom-nav');
 			$this->load->view('includes/footer');
 		} else {

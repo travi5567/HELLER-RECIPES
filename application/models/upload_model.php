@@ -29,6 +29,10 @@ Class upload_model extends CI_Model {
       $this->db->where('id', $id);   
       $this->db->delete('recipes');
     }
+    function comment_delete($id) {    
+      $this->db->where('recipeId', $id);   
+      $this->db->delete('comments');
+    }
 
 
     function update_recipe_form($id, $data){

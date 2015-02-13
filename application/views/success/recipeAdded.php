@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Heller - Recipes/ Recipe Succesfully Added</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
- 	<script src="<?php echo base_url(); ?>assets/js/jqModal.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/jqModal.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/foundation.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/fonts/foundation-icons/foundation-icons.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/base.css">
-</head>
-<body>
 <div class="form-success-container">
 	<h1>Recipe Succesfully Added</h1>
 	<button class="button btn"><a href="<?php echo site_url('uploadimage/view_image'); ?>">Go Back to Recipes</a></button>
 
 </div>
-
 <?php 
 	if($this->session->userdata('is_logged_in')){
 		echo '<div id="bottom-nav">
@@ -41,10 +27,3 @@
 				</div><!-- END OF BOTTOM-NAV -->';
 	}
 ?>
- <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
- <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>assets/js/libs/min/jquery.min.js"><\/script>')</script>
- <script src="<?php echo base_url(); ?>assets/js/foundation.min.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.6/js/foundation.min.js"></script>
- <script src="<?php echo base_url(); ?>assets/js/script.js"></script>
-</body>
-</html>

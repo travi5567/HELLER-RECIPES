@@ -26,16 +26,15 @@
     background-color: #ccffcc; }
   100% {
     background-color: #ccffff; } }
-body, html {
-  background: #00b3b3;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; }
+body {
+  background: #00b3b3; }
 
 .bgOverlay {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
   z-index: 0;
   background: url(../assets/images/white_tiles_@2X.png) repeat;
   opacity: 0.3;
@@ -46,7 +45,7 @@ body, html {
 
 a {
   font-weight: bold;
-  color: #f38c4b; }
+  color: #ffffff; }
 
 .noPadding {
   padding: 0 !important; }
@@ -74,7 +73,11 @@ blockquote {
   border: none; }
 
 h1 {
-  font-weight: bold; }
+  font-size: 2em; }
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5em; }
 
 p.error {
   color: #900503 !important; }
@@ -109,7 +112,9 @@ button.btn.dark {
 .btn.button {
   background: #363c3f;
   outline: none;
-  border: none; }
+  border: none;
+  margin: 0 auto;
+  display: block; }
   .btn.button a {
     color: #ffffff;
     padding: 0;
@@ -120,6 +125,59 @@ button.btn.dark {
     background: #2a2f31 !important;
     outline: none;
     border: none; }
+
+.back-btn, .goto-btn {
+  background: #363c3f;
+  font-size: 1em;
+  text-align: center;
+  padding: 5px;
+  margin-left: 10px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0; }
+  .back-btn:hover, .goto-btn:hover {
+    background: #3b4144; }
+  .back-btn a, .goto-btn a {
+    background: #363c3f;
+    color: #ffffff;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    line-height: 100%;
+    font-weight: normal;
+    font-size: 0.8em; }
+    .back-btn a i, .goto-btn a i {
+      margin-top: 0;
+      margin-right: 10px;
+      font-size: 1em; }
+
+i {
+  margin-right: 15px; }
+
+.goto-btn {
+  position: absolute;
+  bottom: -35px;
+  right: -10px;
+  margin: 0;
+  float: right; }
+  .goto-btn a {
+    padding: 0.3rem;
+    color: #ffffff;
+    font-weight: light;
+    font-size: 0.8em; }
+    .goto-btn a i {
+      margin: 0 0 0 5px; }
+  .goto-btn .corner-graphic {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 15px solid #1e2224; }
 
 #navigation-header {
   background: #363c3f;
@@ -209,6 +267,35 @@ button.btn.dark {
       margin-right: 10px; }
   #bottom-nav .inactive-btn {
     color: #2a2f31 !important; }
+
+.user-container {
+  width: 70%;
+  margin-left: 15%;
+  overflow: hidden;
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+  color: #363c3f; }
+  .user-container .comment-container {
+    position: relative;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    padding: 10px 10px 50px 10px;
+    margin: 10px 0;
+    background: #ffffff; }
+    .user-container .comment-container .cmnt-header {
+      float: none;
+      display: block;
+      overflow: hidden; }
+      .user-container .comment-container .cmnt-header h2 {
+        float: left; }
+      .user-container .comment-container .cmnt-header .rating {
+        float: right; }
+    .user-container .comment-container .recipe-comment {
+      margin: 10px 0; }
 
 .sign-in-container, .sign-up-container {
   width: 70%;
@@ -348,10 +435,8 @@ button.btn.dark {
       padding: 0; }
 
 .view_comments-container {
-  width: 70%;
-  margin-top: 100px;
-  padding-bottom: 100px;
-  margin-left: 15%;
+  width: 90%;
+  margin-left: 5%;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -424,17 +509,16 @@ button.btn.dark {
 
 .view_users-container {
   width: 70%;
-  margin-top: 100px;
+  padding: 100px 0;
   margin-left: 15%;
   overflow: hidden;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  border-radius: 15px;
-  text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 12;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
   color: #363c3f; }
   .view_users-container ul li {
     text-align: left; }
@@ -446,7 +530,10 @@ button.btn.dark {
     width: 100%; }
     .view_users-container button.btn a {
       color: #ffffff;
-      text-align: left; }
+      text-align: center;
+      display: block;
+      width: 100;
+      height: 100%; }
     .view_users-container button.btn i {
       margin-right: 10px; }
 
@@ -454,8 +541,7 @@ button.btn.dark {
   width: 70%;
   margin-left: 15%;
   overflow: hidden;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 0;
   position: relative;
   z-index: 1;
   -webkit-border-radius: 15px;
@@ -480,6 +566,38 @@ button.btn.dark {
   .members-container i {
     margin-right: 10px; }
 
+.error-container {
+  width: 70%;
+  margin-left: 15%;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 1;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  text-align: center;
+  color: #363c3f; }
+  .error-container h1 {
+    font-size: 2em; }
+  .error-container button.btn {
+    background: #004d4d;
+    display: block;
+    float: none;
+    padding: 0;
+    width: 100%; }
+    .error-container button.btn a {
+      color: #ffffff;
+      padding: 10px 15px;
+      text-align: left;
+      width: 100%;
+      display: block; }
+  .error-container i {
+    margin-right: 10px; }
+
 .welcome-container {
   width: 70%;
   margin-left: 15%;
@@ -497,18 +615,19 @@ button.btn.dark {
     text-align: left; }
 
 .form-error-container, .form-success-container {
-  margin: 100px 10% 0 10%;
+  margin: 100px 20% 0;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   border-radius: 10px;
   padding: 10px 20px;
-  width: 80%;
+  width: 60%;
   background: #ffffff;
   color: #004d4d; }
   .form-error-container h1, .form-success-container h1 {
     font-size: 1.5em;
+    text-align: center;
     color: #004d4d; }
   .form-error-container h2, .form-success-container h2 {
     font-size: 1.2em;
@@ -558,97 +677,90 @@ button.btn.dark {
 .add-recipe-container form textarea, .upload-image-container form textarea {
   min-height: 100px; }
 
-.recipes-container, .update-recipes-container {
+.recipes-container, .update-recipes-container, .recipe-container {
   background: #00b3b3;
   height: 100%;
-  padding-top: 100px;
-  padding-bottom: 100px; }
-  .recipes-container .recipes, .update-recipes-container .recipes {
+  padding: 70px 0; }
+  .recipes-container .recipes, .update-recipes-container .recipes, .recipe-container .recipes {
     margin: 20px 0 100px 0; }
-  .recipes-container form#update-recipe-form, .update-recipes-container form#update-recipe-form {
+  .recipes-container form#update-recipe-form, .update-recipes-container form#update-recipe-form, .recipe-container form#update-recipe-form {
     overflow: hidden;
     margin-bottom: 100px; }
-  .recipes-container .form, .update-recipes-container .form {
+  .recipes-container .form, .update-recipes-container .form, .recipe-container .form {
     margin-bottom: 100px; }
-  .recipes-container .filter p, .update-recipes-container .filter p {
-    font-weight: bold;
-    color: #004d4d; }
-    .recipes-container .filter p span, .update-recipes-container .filter p span {
-      background: #ffa568;
-      padding: 5px 10px;
-      cursor: pointer;
-      color: #004d4d; }
-  .recipes-container .back-btn, .update-recipes-container .back-btn {
-    background: #004d4d;
-    width: 96%;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    border-radius: 10px;
+  .recipes-container .back-btn, .update-recipes-container .back-btn, .recipe-container .back-btn {
+    background: #363c3f;
     font-size: 1em;
-    text-align: left;
-    padding: 10px;
-    margin-left: 10px; }
-    .recipes-container .back-btn:hover, .update-recipes-container .back-btn:hover {
-      background: #005757; }
-    .recipes-container .back-btn a, .update-recipes-container .back-btn a {
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0; }
+    .recipes-container .back-btn:hover, .update-recipes-container .back-btn:hover, .recipe-container .back-btn:hover {
+      background: #3b4144; }
+    .recipes-container .back-btn a, .update-recipes-container .back-btn a, .recipe-container .back-btn a {
+      background: #363c3f;
       color: #ffffff;
       display: inline-block;
       width: 100%;
       padding: 10px;
-      line-height: 100%; }
-      .recipes-container .back-btn a i, .update-recipes-container .back-btn a i {
+      line-height: 100%;
+      font-weight: normal;
+      font-size: 0.8em; }
+      .recipes-container .back-btn a i, .update-recipes-container .back-btn a i, .recipe-container .back-btn a i {
         margin-top: 0;
         margin-right: 10px;
         font-size: 1em; }
-  .recipes-container i, .update-recipes-container i {
+  .recipes-container i, .update-recipes-container i, .recipe-container i {
     margin-right: 15px; }
-  .recipes-container #search-form, .update-recipes-container #search-form {
+  .recipes-container #search-form, .update-recipes-container #search-form, .recipe-container #search-form {
     margin: 10px 0 0 0;
     overflow: hidden; }
-    .recipes-container #search-form #search, .update-recipes-container #search-form #search {
+    .recipes-container #search-form #search, .update-recipes-container #search-form #search, .recipe-container #search-form #search {
       display: block;
       width: 100% !important;
       margin: 0 !important;
       border: none; }
-    .recipes-container #search-form #btn-search, .update-recipes-container #search-form #btn-search {
+    .recipes-container #search-form #btn-search, .update-recipes-container #search-form #btn-search, .recipe-container #search-form #btn-search {
       width: 100% !important;
       background: #363c3f;
       border: none;
       color: #ffffff;
       cursor: pointer;
       padding: 10px;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      -ms-border-radius: 10px;
-      -o-border-radius: 10px;
-      border-radius: 10px;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      border-radius: 0;
       margin-top: 0;
       font-size: 1em;
       margin-right: 5px; }
-      .recipes-container #search-form #btn-search:hover, .recipes-container #search-form #btn-search:focus, .update-recipes-container #search-form #btn-search:hover, .update-recipes-container #search-form #btn-search:focus {
+      .recipes-container #search-form #btn-search:hover, .recipes-container #search-form #btn-search:focus, .update-recipes-container #search-form #btn-search:hover, .update-recipes-container #search-form #btn-search:focus, .recipe-container #search-form #btn-search:hover, .recipe-container #search-form #btn-search:focus {
         background: #3b4144; }
-    .recipes-container #search-form label, .update-recipes-container #search-form label {
+    .recipes-container #search-form label, .update-recipes-container #search-form label, .recipe-container #search-form label {
       display: block;
       float: left;
       font-weight: bold;
       padding-top: 5px; }
-    .recipes-container #search-form ::-webkit-input-placeholder, .update-recipes-container #search-form ::-webkit-input-placeholder {
+    .recipes-container #search-form ::-webkit-input-placeholder, .update-recipes-container #search-form ::-webkit-input-placeholder, .recipe-container #search-form ::-webkit-input-placeholder {
       color: #ffffff; }
-    .recipes-container #search-form :-moz-placeholder, .update-recipes-container #search-form :-moz-placeholder {
+    .recipes-container #search-form :-moz-placeholder, .update-recipes-container #search-form :-moz-placeholder, .recipe-container #search-form :-moz-placeholder {
       /* Firefox 18- */
       color: #ffffff; }
-    .recipes-container #search-form ::-moz-placeholder, .update-recipes-container #search-form ::-moz-placeholder {
+    .recipes-container #search-form ::-moz-placeholder, .update-recipes-container #search-form ::-moz-placeholder, .recipe-container #search-form ::-moz-placeholder {
       /* Firefox 19+ */
       color: #ffffff; }
-    .recipes-container #search-form :-ms-input-placeholder, .update-recipes-container #search-form :-ms-input-placeholder {
+    .recipes-container #search-form :-ms-input-placeholder, .update-recipes-container #search-form :-ms-input-placeholder, .recipe-container #search-form :-ms-input-placeholder {
       color: #ffffff; }
-    .recipes-container #search-form p, .update-recipes-container #search-form p {
+    .recipes-container #search-form p, .update-recipes-container #search-form p, .recipe-container #search-form p {
       float: left; }
-    .recipes-container #search-form p.search, .update-recipes-container #search-form p.search {
+    .recipes-container #search-form p.search, .update-recipes-container #search-form p.search, .recipe-container #search-form p.search {
       float: left; }
-    .recipes-container #search-form input[name="search"], .update-recipes-container #search-form input[name="search"] {
+    .recipes-container #search-form input[name="search"], .update-recipes-container #search-form input[name="search"], .recipe-container #search-form input[name="search"] {
       float: right;
       display: block;
       background: #ffffff;
@@ -669,18 +781,18 @@ button.btn.dark {
       -moz-transition: all 0.7s ease 0s;
       -o-transition: all 0.7s ease 0s;
       transition: all 0.7s ease 0s; }
-    .recipes-container #search-form input[type="text"]:focus, .update-recipes-container #search-form input[type="text"]:focus {
+    .recipes-container #search-form input[type="text"]:focus, .update-recipes-container #search-form input[type="text"]:focus, .recipe-container #search-form input[type="text"]:focus {
       width: 200px; }
-  .recipes-container h1, .update-recipes-container h1 {
+  .recipes-container h1, .update-recipes-container h1, .recipe-container h1 {
     font-size: 0.8em;
     margin: 0;
     padding: 0; }
-  .recipes-container .heading, .update-recipes-container .heading {
+  .recipes-container .heading, .update-recipes-container .heading, .recipe-container .heading {
     margin-top: 0;
     padding: 0 10px; }
-  .recipes-container .recipe:first-child, .update-recipes-container .recipe:first-child {
+  .recipes-container .recipe:first-child, .update-recipes-container .recipe:first-child, .recipe-container .recipe:first-child {
     margin-top: 0; }
-  .recipes-container .recipe, .update-recipes-container .recipe {
+  .recipes-container .recipe, .update-recipes-container .recipe, .recipe-container .recipe {
     background: #004d4d;
     overflow: hidden;
     margin: 10px 0;
@@ -691,27 +803,27 @@ button.btn.dark {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px; }
-    .recipes-container .recipe h1, .update-recipes-container .recipe h1 {
+    .recipes-container .recipe h1, .update-recipes-container .recipe h1, .recipe-container .recipe h1 {
       font-size: 0.8em;
       text-transform: uppercase;
       color: #ffffff; }
-    .recipes-container .recipe a, .update-recipes-container .recipe a {
+    .recipes-container .recipe a, .update-recipes-container .recipe a, .recipe-container .recipe a {
       color: #ffffff;
       float: right;
       padding-top: 5px;
       padding-right: 10px; }
-      .recipes-container .recipe a:hover i, .recipes-container .recipe a:hover, .update-recipes-container .recipe a:hover i, .update-recipes-container .recipe a:hover {
+      .recipes-container .recipe a:hover i, .recipes-container .recipe a:hover, .update-recipes-container .recipe a:hover i, .update-recipes-container .recipe a:hover, .recipe-container .recipe a:hover i, .recipe-container .recipe a:hover {
         color: #ffa568; }
-    .recipes-container .recipe i, .update-recipes-container .recipe i {
+    .recipes-container .recipe i, .update-recipes-container .recipe i, .recipe-container .recipe i {
       color: #ffffff;
       margin: 0 1px;
       font-size: 0.8em; }
-      .recipes-container .recipe i:hover, .update-recipes-container .recipe i:hover {
+      .recipes-container .recipe i:hover, .update-recipes-container .recipe i:hover, .recipe-container .recipe i:hover {
         color: #ffa568; }
-    .recipes-container .recipe .top-heading, .update-recipes-container .recipe .top-heading {
+    .recipes-container .recipe .top-heading, .update-recipes-container .recipe .top-heading, .recipe-container .recipe .top-heading {
       padding-bottom: 15px;
       cursor: pointer; }
-    .recipes-container .recipe .bottom-info, .update-recipes-container .recipe .bottom-info {
+    .recipes-container .recipe .bottom-info, .update-recipes-container .recipe .bottom-info, .recipe-container .recipe .bottom-info {
       background: #ffffff;
       overflow: hidden;
       padding: 15px 10px 10px 10px;
@@ -721,17 +833,17 @@ button.btn.dark {
       -ms-border-radius: 10px;
       -o-border-radius: 10px;
       border-radius: 10px; }
-      .recipes-container .recipe .bottom-info blockquote, .update-recipes-container .recipe .bottom-info blockquote {
+      .recipes-container .recipe .bottom-info blockquote, .update-recipes-container .recipe .bottom-info blockquote, .recipe-container .recipe .bottom-info blockquote {
         color: #363c3f; }
-      .recipes-container .recipe .bottom-info .view-comments, .update-recipes-container .recipe .bottom-info .view-comments {
+      .recipes-container .recipe .bottom-info .view-comments, .update-recipes-container .recipe .bottom-info .view-comments, .recipe-container .recipe .bottom-info .view-comments {
         font-size: 0.9em; }
-      .recipes-container .recipe .bottom-info .edit-recipe, .update-recipes-container .recipe .bottom-info .edit-recipe {
+      .recipes-container .recipe .bottom-info .edit-recipe, .update-recipes-container .recipe .bottom-info .edit-recipe, .recipe-container .recipe .bottom-info .edit-recipe {
         font-size: 0.9em; }
-      .recipes-container .recipe .bottom-info .delete, .update-recipes-container .recipe .bottom-info .delete {
+      .recipes-container .recipe .bottom-info .delete, .update-recipes-container .recipe .bottom-info .delete, .recipe-container .recipe .bottom-info .delete {
         width: 100%;
         margin: 10px 0;
         padding: 0.8rem 1.5rem 1rem 1.5rem; }
-        .recipes-container .recipe .bottom-info .delete a, .update-recipes-container .recipe .bottom-info .delete a {
+        .recipes-container .recipe .bottom-info .delete a, .update-recipes-container .recipe .bottom-info .delete a, .recipe-container .recipe .bottom-info .delete a {
           color: #ffffff;
           margin: 0;
           padding: 0;
@@ -739,14 +851,14 @@ button.btn.dark {
           font-size: 0.8em;
           width: 100%;
           display: block; }
-          .recipes-container .recipe .bottom-info .delete a:hover, .update-recipes-container .recipe .bottom-info .delete a:hover {
+          .recipes-container .recipe .bottom-info .delete a:hover, .update-recipes-container .recipe .bottom-info .delete a:hover, .recipe-container .recipe .bottom-info .delete a:hover {
             color: #ffffff; }
-          .recipes-container .recipe .bottom-info .delete a i, .update-recipes-container .recipe .bottom-info .delete a i {
+          .recipes-container .recipe .bottom-info .delete a i, .update-recipes-container .recipe .bottom-info .delete a i, .recipe-container .recipe .bottom-info .delete a i {
             color: #ffffff;
             font-size: 1em; }
-            .recipes-container .recipe .bottom-info .delete a i:hover, .update-recipes-container .recipe .bottom-info .delete a i:hover {
+            .recipes-container .recipe .bottom-info .delete a i:hover, .update-recipes-container .recipe .bottom-info .delete a i:hover, .recipe-container .recipe .bottom-info .delete a i:hover {
               color: #ffffff; }
-      .recipes-container .recipe .bottom-info a.inline, .update-recipes-container .recipe .bottom-info a.inline {
+      .recipes-container .recipe .bottom-info a.inline, .update-recipes-container .recipe .bottom-info a.inline, .recipe-container .recipe .bottom-info a.inline {
         background: #99a3a8;
         color: #ffffff;
         font-weight: normal;
@@ -762,41 +874,160 @@ button.btn.dark {
         display: inline-block;
         padding: 5px 10px;
         margin: 0 0 0 10px; }
-        .recipes-container .recipe .bottom-info a.inline:hover, .update-recipes-container .recipe .bottom-info a.inline:hover {
+        .recipes-container .recipe .bottom-info a.inline:hover, .update-recipes-container .recipe .bottom-info a.inline:hover, .recipe-container .recipe .bottom-info a.inline:hover {
           color: #ffffff;
           background: #7e8a90; }
-        .recipes-container .recipe .bottom-info a.inline:hover i, .update-recipes-container .recipe .bottom-info a.inline:hover i {
+        .recipes-container .recipe .bottom-info a.inline:hover i, .update-recipes-container .recipe .bottom-info a.inline:hover i, .recipe-container .recipe .bottom-info a.inline:hover i {
           color: #ffffff; }
-        .recipes-container .recipe .bottom-info a.inline i, .update-recipes-container .recipe .bottom-info a.inline i {
+        .recipes-container .recipe .bottom-info a.inline i, .update-recipes-container .recipe .bottom-info a.inline i, .recipe-container .recipe .bottom-info a.inline i {
           color: #ffffff; }
-          .recipes-container .recipe .bottom-info a.inline i:hover, .update-recipes-container .recipe .bottom-info a.inline i:hover {
+          .recipes-container .recipe .bottom-info a.inline i:hover, .update-recipes-container .recipe .bottom-info a.inline i:hover, .recipe-container .recipe .bottom-info a.inline i:hover {
             color: #ffffff !important; }
-      .recipes-container .recipe .bottom-info a, .update-recipes-container .recipe .bottom-info a {
+      .recipes-container .recipe .bottom-info a, .update-recipes-container .recipe .bottom-info a, .recipe-container .recipe .bottom-info a {
         color: #363c3f;
         float: right;
         padding-top: 5px;
         padding-right: 0; }
-      .recipes-container .recipe .bottom-info i, .update-recipes-container .recipe .bottom-info i {
+      .recipes-container .recipe .bottom-info i, .update-recipes-container .recipe .bottom-info i, .recipe-container .recipe .bottom-info i {
         color: #363c3f; }
-      .recipes-container .recipe .bottom-info p, .update-recipes-container .recipe .bottom-info p {
+      .recipes-container .recipe .bottom-info p, .update-recipes-container .recipe .bottom-info p, .recipe-container .recipe .bottom-info p {
         font-size: 0.9em; }
-        .recipes-container .recipe .bottom-info p span, .update-recipes-container .recipe .bottom-info p span {
+        .recipes-container .recipe .bottom-info p span, .update-recipes-container .recipe .bottom-info p span, .recipe-container .recipe .bottom-info p span {
           font-size: 0.9em;
           font-weight: bold;
           color: #004d4d; }
-    .recipes-container .recipe .header-info, .update-recipes-container .recipe .header-info {
+    .recipes-container .recipe .header-info, .update-recipes-container .recipe .header-info, .recipe-container .recipe .header-info {
       float: right; }
-      .recipes-container .recipe .header-info p.block, .update-recipes-container .recipe .header-info p.block {
+      .recipes-container .recipe .header-info p.block, .update-recipes-container .recipe .header-info p.block, .recipe-container .recipe .header-info p.block {
         background: #ffa568;
         padding: 3px 10px;
         font-size: 0.7em;
         display: inline-block; }
-        .recipes-container .recipe .header-info p.block i, .update-recipes-container .recipe .header-info p.block i {
+        .recipes-container .recipe .header-info p.block i, .update-recipes-container .recipe .header-info p.block i, .recipe-container .recipe .header-info p.block i {
           margin-right: 10px;
           font-weight: bold;
           color: #ffffff; }
-    .recipes-container .recipe .recipe-thumb img, .update-recipes-container .recipe .recipe-thumb img {
+    .recipes-container .recipe .recipe-thumb img, .update-recipes-container .recipe .recipe-thumb img, .recipe-container .recipe .recipe-thumb img {
       float: right; }
+
+.recipe-container .recipe {
+  background: #004d4d;
+  overflow: hidden;
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px 15px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
+  .recipe-container .recipe h1 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #ffffff; }
+  .recipe-container .recipe a {
+    color: #ffffff;
+    float: right;
+    padding-top: 5px;
+    padding-right: 10px; }
+    .recipe-container .recipe a:hover i, .recipe-container .recipe a:hover {
+      color: #ffa568; }
+  .recipe-container .recipe i {
+    color: #ffffff;
+    margin: 0 1px;
+    font-size: 0.8em; }
+    .recipe-container .recipe i:hover {
+      color: #ffa568; }
+  .recipe-container .recipe .top-heading {
+    padding-bottom: 15px;
+    cursor: pointer; }
+  .recipe-container .recipe .bottom-info {
+    background: #ffffff;
+    overflow: hidden;
+    display: block !important;
+    padding: 15px 10px 10px 10px;
+    margin: 10px 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px; }
+    .recipe-container .recipe .bottom-info blockquote {
+      color: #363c3f; }
+    .recipe-container .recipe .bottom-info .view-comments {
+      font-size: 0.9em; }
+    .recipe-container .recipe .bottom-info .edit-recipe {
+      font-size: 0.9em; }
+    .recipe-container .recipe .bottom-info .delete {
+      width: 100%;
+      margin: 10px 0;
+      padding: 0.8rem 1.5rem 1rem 1.5rem; }
+      .recipe-container .recipe .bottom-info .delete a {
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        float: left;
+        font-size: 0.8em;
+        width: 100%;
+        display: block; }
+        .recipe-container .recipe .bottom-info .delete a:hover {
+          color: #ffffff; }
+        .recipe-container .recipe .bottom-info .delete a i {
+          color: #ffffff;
+          font-size: 1em; }
+          .recipe-container .recipe .bottom-info .delete a i:hover {
+            color: #ffffff; }
+    .recipe-container .recipe .bottom-info a.inline {
+      background: #99a3a8;
+      color: #ffffff;
+      font-weight: normal;
+      text-align: center;
+      font-size: 0.8em;
+      letter-spacing: 0.2em;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+      float: none;
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 0 0 0 10px; }
+      .recipe-container .recipe .bottom-info a.inline:hover {
+        color: #ffffff;
+        background: #7e8a90; }
+      .recipe-container .recipe .bottom-info a.inline:hover i {
+        color: #ffffff; }
+      .recipe-container .recipe .bottom-info a.inline i {
+        color: #ffffff; }
+        .recipe-container .recipe .bottom-info a.inline i:hover {
+          color: #ffffff !important; }
+    .recipe-container .recipe .bottom-info a {
+      color: #363c3f;
+      float: right;
+      padding-top: 5px;
+      padding-right: 0; }
+    .recipe-container .recipe .bottom-info i {
+      color: #363c3f; }
+    .recipe-container .recipe .bottom-info p {
+      font-size: 0.9em; }
+      .recipe-container .recipe .bottom-info p span {
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #004d4d; }
+  .recipe-container .recipe .header-info {
+    float: right; }
+    .recipe-container .recipe .header-info p.block {
+      background: #ffa568;
+      padding: 3px 10px;
+      font-size: 0.7em;
+      display: inline-block; }
+      .recipe-container .recipe .header-info p.block i {
+        margin-right: 10px;
+        font-weight: bold;
+        color: #ffffff; }
+  .recipe-container .recipe .recipe-thumb img {
+    float: right; }
 
 .update-recipes-container .recipes {
   margin: 20px 0; }
@@ -951,6 +1182,21 @@ button.btn.dark {
     float: left !important; }
     body .menu-toggle span, html .menu-toggle span {
       float: none; }
+  body .view_users-container, body .user-container, html .view_users-container, html .user-container {
+    width: 94%;
+    margin-left: 3%; }
+    body .view_users-container h1, body .user-container h1, html .view_users-container h1, html .user-container h1 {
+      margin: 0;
+      padding: 0; }
+    body .view_users-container h2, body .user-container h2, html .view_users-container h2, html .user-container h2 {
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      line-height: 1em; }
+    body .view_users-container p, body .user-container p, html .view_users-container p, html .user-container p {
+      font-size: 0.8em; }
+    body .view_users-container i, body .user-container i, html .view_users-container i, html .user-container i {
+      font-size: 0.5em; }
   body .sign-in-container, html .sign-in-container {
     width: 90%;
     margin-left: 5%; }
@@ -994,10 +1240,17 @@ button.btn.dark {
     margin-top: 100px;
     padding-bottom: 100px;
     margin-left: 5%;
-    overflow: hidden; } }
+    overflow: hidden; }
+  body .goto-btn a, html .goto-btn a {
+    font-size: 0.6em; }
+    body .goto-btn a i, html .goto-btn a i {
+      margin: 0 0 0 5px; } }
 /* Define mobile styles */
 @media only screen and (max-width: 40em) {
   /* Portrait */
+  .error-container h1 {
+    font-size: 1.2em; }
+
   #navigation-header .logo a h1 {
     font-size: 1.5em;
     color: #ffffff; }
@@ -1030,9 +1283,19 @@ button.btn.dark {
 /* min-width 641px, medium screens */
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 @media only screen and (min-width: 64.063em) {
-  body, html {
-    background: #00b3b3 !important;
-    height: 100%; } }
+  body .view_users-container, body .user-container, html .view_users-container, html .user-container {
+    width: 90%;
+    margin-left: 5%; }
+    body .view_users-container h1, body .user-container h1, html .view_users-container h1, html .user-container h1 {
+      margin: 0;
+      padding: 0; }
+    body .view_users-container i, body .user-container i, html .view_users-container i, html .user-container i {
+      font-size: 0.8em; }
+  body .goto-btn a, html .goto-btn a {
+    padding: 0.3rem;
+    font-size: 0.8em; }
+    body .goto-btn a i, html .goto-btn a i {
+      margin: 0 0 0 5px; } }
 /* min-width 1025px, large screens */
 /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
 /* min-width 1441px, xlarge screens */

@@ -45,6 +45,15 @@ class Model_users extends CI_Model{
         return $this->db->get($table);
     }
 
+    public function show_comment_user($data){
+		$this->db->select('*');
+		$this->db->from('comments');
+		$this->db->where('author', $data);
+		$query = $this->db->get();
+		$result = $query->result();
+		return $result;
+	}
+
 	public function add_user($key){
 	    $this->db->where('key', $key);
 	    $temp_user = $this->db->get('temp_users');

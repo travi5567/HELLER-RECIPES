@@ -59,9 +59,19 @@ class Uploadimage extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 
+	function success(){
+		$userdata['user_info'] = $this->model_users->view_user('users')->result();
+		$this->load->view('includes/header');
+		$this->load->view('includes/navigation-header', $userdata);
+		$this->load->view('success/recipeAdded');
+		$this->load->view('includes/bottom-nav');
+		$this->load->view('includes/footer');
+	}
+
 	function delete_recipe(){
 		$id = $this->uri->segment(3);
 		$this->load->model('upload_model');
+    	$this->upload_model->comment_delete($id);
     	$this->upload_model->row_delete($id);
     	$data['success'] = '<h2>Your Recipe has been removed</h2>';
 	    $this->load->view('delete', $data);
@@ -74,11 +84,16 @@ class Uploadimage extends CI_Controller {
 	    $config['allowed_types'] = 'gif|jpg|jpeg|png';
 	    $config['max_size'] = '';
 	    $config['max_width']  = '600';
-	    $config['max_height']  = '';
+	    $config['max_height']  = '600';
 	    $config['overwrite'] = TRUE;
 	    $config['remove_spaces'] = TRUE;
+	    $config['width'] = 300;
+		$config['height'] = 500; // No restraint on height
+		$this->load->library('image_lib', $config);
+		$this->image_lib->resize();
 		$this->load->library('upload', $config);
 		
+
 		
 	 	if($this->upload->do_upload()){//IF FILE EXIST AND NO ERRORS-GOOD-FILE
 	 		$image_data = $this->upload->data();
@@ -94,7 +109,7 @@ class Uploadimage extends CI_Controller {
 		      	'imagePath' => $image_data['full_path']
 		    );
 		    $this->upload_model->update_recipe_form($id, $data);
-		    redirect('login/success');
+		    redirect('uploadimage/success');
 	 	}else{//NO FILE || BAD FILE
 			$image_data = $this->upload->data();
 	 		if($image_data['file_name']){
@@ -120,7 +135,7 @@ class Uploadimage extends CI_Controller {
 			        'posted' =>  date('Y-m-d')
 			    );
 			    $this->upload_model->update_recipe_form($id, $data);
-			    redirect('login/success');
+			    redirect('uploadimage/success');
 			}
 	 	}
 	}

@@ -24,15 +24,6 @@ class Login extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 
-	public function success(){
-		$userdata['user_info'] = $this->model_users->view_user('users')->result();
-		$this->load->view('includes/header');
-		$this->load->view('includes/navigation-header', $userdata);
-		$this->load->view('success/recipeAdded');
-		$this->load->view('includes/bottom-nav');
-		$this->load->view('includes/footer');
-	}
-
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect('login');
