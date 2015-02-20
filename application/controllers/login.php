@@ -71,6 +71,7 @@ class Login extends CI_Controller {
 	            $data = array(
 	                'firstname' => $res->firstname,
 	                'email' =>  $res->email,
+	                'admin' =>  $res->admin,
 	                'is_logged_in' => 1
 	            );
 	            $this->session->set_userdata($data);
@@ -99,7 +100,11 @@ class Login extends CI_Controller {
 			if($this->model_users->add_temp_users($key)){
 				//Send a email to the user
 				if($this->email->send()){
-					echo "The email has been sent";
+					$this->load->view('includes/header');
+					$this->load->view('includes/navigation-header');
+					$this->load->view('email_sent');
+					$this->load->view('includes/bottom-nav');
+					$this->load->view('includes/footer');
 				} else echo "Could not send the email";
 			} else echo "Problem adding to database";
 		} else {
@@ -128,14 +133,16 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'required|md5|trim|callback_validate_credentials'); 
 		$email = $this->input->post('email'); 
 		$password = $this->input->post('password'); 
+		$admin = $this->input->post('admin'); 
 		$validated = $this->form_validation->run();
 		if($validated){ 
 			if($this->model_users->can_log_in($email, $password)) { 
 				$userData = $this->model_users->getDataForSession($email); 
 				$data = array( 
 					"firstname" => $userData->firstname, 
-					"email" => $email, 
-					"is_logged_in" => 1 
+					"email" => $email,
+					"admin" => $admin,
+					"is_logged_in" => 1, 
 					); 
 				$this->session->set_userdata($data); 
 				redirect('login/members', $data); 

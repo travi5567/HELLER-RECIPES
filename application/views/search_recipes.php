@@ -1,8 +1,5 @@
 <div class="recipes-container">
 	<div class="row">
-		<div class="small-12 medium-12 columns">
-			<p>A list of some of the most amzing meals conjured up and enjoyed by the Heller's. Enjoy, and please give credit where credit is do.</p>
-		</div>
 		<div class="small-12 column noSpace">
 			<button class="btn back-btn"><a href="<?php echo base_url('addRecipe/recipes') ?>"><i class="fi fi-arrow-left"></i>Back to Recipes</a></button>
 		</div>

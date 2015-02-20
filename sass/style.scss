@@ -1,7 +1,7 @@
-html {
-}
 body {
 	background: $lightTeal;
+	line-height: 1.5;
+	font-family: 'Lato', sans-serif;
 }
 .bgOverlay {
 	position: fixed;
@@ -137,7 +137,9 @@ i {
 	right: -10px;
 	margin: 0;
 	float: right;
+	background: $teal;
 	a {
+		background: $teal;
 		padding: 0.3rem;
 		color: $white;
 		font-weight: light;
@@ -154,7 +156,7 @@ i {
 		height: 0; 
 		border-top: 10px solid transparent;
 		border-bottom: 0 solid transparent;
-		border-left: 15px solid darken($grey, 10%);
+		border-left: 15px solid darken($teal, 10%);
 	}
 }
 
@@ -293,6 +295,8 @@ i {
 			overflow: hidden;
 			h2 {
 				float: left;
+				text-transform: uppercase;
+				color: $teal;
 			}
 			.rating {
 				float: right;
@@ -751,7 +755,7 @@ i {
 .recipes-container, .update-recipes-container, .recipe-container {
 	background: $lightTeal;
 	height: 100%;
-	padding: 70px 0;
+	padding: 90px 0;
 	.recipes {
 		margin: 20px 0 100px 0;
 	}

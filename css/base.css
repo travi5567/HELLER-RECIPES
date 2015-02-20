@@ -27,7 +27,9 @@
   100% {
     background-color: #ccffff; } }
 body {
-  background: #00b3b3; }
+  background: #00b3b3;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif; }
 
 .bgOverlay {
   position: fixed;
@@ -161,8 +163,10 @@ i {
   bottom: -35px;
   right: -10px;
   margin: 0;
-  float: right; }
+  float: right;
+  background: #004d4d; }
   .goto-btn a {
+    background: #004d4d;
     padding: 0.3rem;
     color: #ffffff;
     font-weight: light;
@@ -177,7 +181,7 @@ i {
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 0 solid transparent;
-    border-left: 15px solid #1e2224; }
+    border-left: 15px solid #001a1a; }
 
 #navigation-header {
   background: #363c3f;
@@ -291,7 +295,9 @@ i {
       display: block;
       overflow: hidden; }
       .user-container .comment-container .cmnt-header h2 {
-        float: left; }
+        float: left;
+        text-transform: uppercase;
+        color: #004d4d; }
       .user-container .comment-container .cmnt-header .rating {
         float: right; }
     .user-container .comment-container .recipe-comment {
@@ -680,7 +686,7 @@ i {
 .recipes-container, .update-recipes-container, .recipe-container {
   background: #00b3b3;
   height: 100%;
-  padding: 70px 0; }
+  padding: 90px 0; }
   .recipes-container .recipes, .update-recipes-container .recipes, .recipe-container .recipes {
     margin: 20px 0 100px 0; }
   .recipes-container form#update-recipe-form, .update-recipes-container form#update-recipe-form, .recipe-container form#update-recipe-form {
